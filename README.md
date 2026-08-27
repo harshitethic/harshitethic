@@ -58,13 +58,7 @@ ideas → architecture → code → deployment → impact
 
 ---
 
-## `04 / ACTIVITY`
-
-<img src="https://raw.githubusercontent.com/harshitethic/harshitethic/main/assets/github-activity.svg" alt="GitHub activity" width="100%"/>
-
----
-
-## `05 / NUMBERS`
+## `04 / NUMBERS`
 
 <p align="center">
 
@@ -78,7 +72,7 @@ ideas → architecture → code → deployment → impact
 
 ---
 
-## `06 / CONNECT`
+## `05 / CONNECT`
 
 <div align="center">
 
@@ -86,7 +80,7 @@ ideas → architecture → code → deployment → impact
 
 <a href="mailto:contact@harshitethic.com?subject=Project%20Inquiry">**SEND EMAIL →**</a>
 
-<br/><br/>
+<br/>
 
 <a href="https://harshitethic.com">harshitethic.com</a>
 &nbsp;·&nbsp;
