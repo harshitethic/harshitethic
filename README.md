@@ -58,21 +58,7 @@ ideas → architecture → code → deployment → impact
 
 ---
 
-## `04 / NUMBERS`
-
-<p align="center">
-
-<img src="https://img.shields.io/badge/20%2B-CLIENTS-00E6A8?style=for-the-badge&labelColor=08120F&color=00E6A8" alt="20+ clients"/>
-&nbsp;
-<img src="https://img.shields.io/badge/₹10L%2B-EARNED-00E6A8?style=for-the-badge&labelColor=08120F&color=00E6A8" alt="10L+ earned"/>
-&nbsp;
-<img src="https://img.shields.io/badge/500%2B-APP_DOWNLOADS-00E6A8?style=for-the-badge&labelColor=08120F&color=00E6A8" alt="500+ downloads"/>
-
-</p>
-
----
-
-## `05 / CONNECT`
+## `04 / CONNECT`
 
 <div align="center">
 
