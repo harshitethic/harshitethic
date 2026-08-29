@@ -47,9 +47,9 @@ ideas → architecture → code → deployment → impact
 <!-- START_LATEST_REPOS -->
 | Repository | Description | Stars |
 |---|---|---:|
-| [PatchPilot](https://github.com/harshitethic/PatchPilot) | Open-source AI developer agent that analyzes repositories, plans changes, edits code, runs tests,... | 0 |
 | [harshitethic](https://github.com/harshitethic/harshitethic) | Independent developer building practical software across AI, Web3, automation, and infrastructure. | 0 |
-| [whatsapp-chatgpt](https://github.com/harshitethic/whatsapp-chatgpt) | This is a source code to build a WhatsApp bot using OpenAI bot and Node.js. The bot is capable of... | 69 |
+| [PatchPilot](https://github.com/harshitethic/PatchPilot) | Open-source AI developer agent that analyzes repositories, plans changes, edits code, runs tests,... | 0 |
+| [whatsapp-chatgpt](https://github.com/harshitethic/whatsapp-chatgpt) | This is a source code to build a WhatsApp bot using OpenAI bot and Node.js. The bot is capable of... | 68 |
 | [RepoPilot](https://github.com/harshitethic/RepoPilot) | 🧠 Local AI codebase engineer that analyzes GitHub repos, searches source code, explains architect... | 0 |
 | [AI-Mock-Interviewer](https://github.com/harshitethic/AI-Mock-Interviewer) | A free, local-AI mock interview platform for students with resume-based questions, voice intervie... | 0 |
 | [studybuddy](https://github.com/harshitethic/studybuddy) | Free AI study planner for college students with local AI, adaptive scheduling, progress tracking ... | 0 |
