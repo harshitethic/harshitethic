@@ -47,12 +47,12 @@ ideas → architecture → code → deployment → impact
 <!-- START_LATEST_REPOS -->
 | Repository | Description | Stars |
 |---|---|---:|
+| [OpenTune](https://github.com/harshitethic/OpenTune) | Open-source YouTube Music-style web player with search, playback, queue, recommendations and opti... | 1 |
+| [harshitethic](https://github.com/harshitethic/harshitethic) | Independent developer building practical software across AI, Web3, automation, and infrastructure. | 0 |
 | [telegram-youtube-downloader](https://github.com/harshitethic/telegram-youtube-downloader) | It's a script in nodejs which helps to download youtube video on telegram via bot. | 8 |
 | [crypto-wallet-checker](https://github.com/harshitethic/crypto-wallet-checker) | Crypto Wallet Checker is a Telegram bot that allows you to fetch the balance of Ethereum wallets ... | 3 |
 | [PatchPilot](https://github.com/harshitethic/PatchPilot) | Open-source AI developer agent that analyzes repositories, plans changes, edits code, runs tests,... | 0 |
-| [harshitethic](https://github.com/harshitethic/harshitethic) | Independent developer building practical software across AI, Web3, automation, and infrastructure. | 0 |
 | [whatsapp-chatgpt](https://github.com/harshitethic/whatsapp-chatgpt) | This is a source code to build a WhatsApp bot using OpenAI bot and Node.js. The bot is capable of... | 68 |
-| [RepoPilot](https://github.com/harshitethic/RepoPilot) | 🧠 Local AI codebase engineer that analyzes GitHub repos, searches source code, explains architect... | 0 |
 <!-- END_LATEST_REPOS -->
 
 ---
