@@ -47,8 +47,8 @@ ideas → architecture → code → deployment → impact
 <!-- START_LATEST_REPOS -->
 | Repository | Description | Stars |
 |---|---|---:|
-| [PsychologyOS](https://github.com/harshitethic/PsychologyOS) | Open-source psychology learning platform built to help a friend with college coursework, featurin... | 0 |
 | [harshitethic](https://github.com/harshitethic/harshitethic) | Independent developer building practical software across AI, Web3, automation, and infrastructure. | 0 |
+| [PsychologyOS](https://github.com/harshitethic/PsychologyOS) | Open-source psychology learning platform built to help a friend with college coursework, featurin... | 0 |
 | [RepoPilot](https://github.com/harshitethic/RepoPilot) | 🧠 Local AI codebase engineer that analyzes GitHub repos, searches source code, explains architect... | 0 |
 | [OpenTune](https://github.com/harshitethic/OpenTune) | Open-source YouTube Music-style web player with search, playback, queue, recommendations and opti... | 1 |
 | [telegram-youtube-downloader](https://github.com/harshitethic/telegram-youtube-downloader) | It's a script in nodejs which helps to download youtube video on telegram via bot. | 8 |
