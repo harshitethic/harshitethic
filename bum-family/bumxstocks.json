@@ -1,0 +1,14 @@
+{
+  "name": "BumXStocks",
+  "symbol": "BUMX",
+  "description": "BumXStocks is launched on Bum.family and paired with wrapped Apple xStock (wAAPLx) on Ethereum. 100% of the 1 billion fixed BUMX supply is seeded into permanently locked Uniswap v4 liquidity. No minting and no creator token pre-allocation.",
+  "image": "https://raw.githubusercontent.com/harshitethic/harshitethic/main/bum-family/bumxstocks-logo.svg",
+  "banner": "https://raw.githubusercontent.com/harshitethic/harshitethic/main/bum-family/bumxstocks-banner.svg",
+  "website": "https://bum.family",
+  "chain": "Ethereum",
+  "launchpad": "Bum.family",
+  "pair": "wAAPLx",
+  "pairAddress": "0x943bf64d566c32a2bcd41ac92fb63c111cc9de8f",
+  "liquidity": "100% permanently locked",
+  "poolFee": "1%"
+}
