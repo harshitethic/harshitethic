@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+<title id="title">Bum.family logo</title><desc id="desc">Retro B mascot for Bum.family</desc>
+<rect width="160" height="160" rx="30" fill="#FFD84D"/><rect x="8" y="8" width="144" height="144" rx="24" fill="#FFFDF5" stroke="#111" stroke-width="8"/>
+<path d="M45 35h37c28 0 42 11 42 31 0 11-6 20-17 25 14 4 22 14 22 29 0 24-17 35-49 35H45V35Z" fill="#5E8CFF" stroke="#111" stroke-width="8" stroke-linejoin="round"/>
+<path d="M67 58h14c11 0 17 4 17 12s-6 12-18 12H67V58Zm0 47h17c12 0 18 4 18 13s-6 13-19 13H67v-26Z" fill="#FFFDF5" stroke="#111" stroke-width="6"/>
+<circle cx="116" cy="48" r="10" fill="#F35B50" stroke="#111" stroke-width="5"/><path d="M108 137c9 8 22 8 31 0" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+</svg>
