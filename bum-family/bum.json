@@ -1,0 +1,13 @@
+{
+  "name": "Bum",
+  "symbol": "BUM",
+  "description": "The first token launched on Bum.family. 100% of the fixed supply is seeded into permanently locked Uniswap v4 liquidity on Ethereum. No minting and no creator token pre-allocation.",
+  "image": "https://raw.githubusercontent.com/harshitethic/harshitethic/main/bum-family/bum-logo.svg",
+  "banner": "https://raw.githubusercontent.com/harshitethic/harshitethic/main/bum-family/bum-banner.svg",
+  "website": "https://bum.family",
+  "chain": "Ethereum",
+  "launchpad": "Bum.family",
+  "pair": "ETH",
+  "liquidity": "100% permanently locked",
+  "poolFee": "1%"
+}
