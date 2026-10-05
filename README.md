@@ -47,8 +47,8 @@ ideas → architecture → code → deployment → impact
 <!-- START_LATEST_REPOS -->
 | Repository | Description | Stars |
 |---|---|---:|
-| [harshitethic](https://github.com/harshitethic/harshitethic) | Independent developer building practical software across AI, Web3, automation, and infrastructure. | 0 |
 | [AI-Mock-Interviewer](https://github.com/harshitethic/AI-Mock-Interviewer) | A free, local-AI mock interview platform for students with resume-based questions, voice intervie... | 0 |
+| [harshitethic](https://github.com/harshitethic/harshitethic) | Independent developer building practical software across AI, Web3, automation, and infrastructure. | 0 |
 | [PsychologyOS](https://github.com/harshitethic/PsychologyOS) | Open-source psychology learning platform built to help a friend with college coursework, featurin... | 0 |
 | [RepoPilot](https://github.com/harshitethic/RepoPilot) | 🧠 Local AI codebase engineer that analyzes GitHub repos, searches source code, explains architect... | 0 |
 | [OpenTune](https://github.com/harshitethic/OpenTune) | Open-source YouTube Music-style web player with search, playback, queue, recommendations and opti... | 1 |
