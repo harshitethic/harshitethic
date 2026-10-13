@@ -4,7 +4,31 @@ A selection of technical work with **links to source, regression tests and CI**.
 
 Updated: 13 October 2026.
 
-## 1. PatchPilot — reducing the attack surface of an AI coding agent
+## 1. LeaseLedger — explicit correctness contracts for durable work
+
+**Repository:** [LeaseLedger](https://github.com/harshitethic/LeaseLedger)
+**Evidence:** [CI matrix](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml) · [Release v0.1.0](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.0) · [Fencing-token failure analysis](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md)
+
+**Problem:** Naive job processing loses work when a worker crashes and allows a
+paused worker to acknowledge a job after its lease has been reassigned.
+
+**Design:** SQLite WAL for durability, `BEGIN IMMEDIATE` for atomic multi-process
+claims, monotonic fencing tokens, deadline-validated acknowledgements, worker
+heartbeats, idempotent submissions, bounded retries and dead-letter records.
+Every transition writes a durable audit event in the same transaction.
+
+**Verification:** Twenty-two passing automated tests, including four real
+processes competing for 48 jobs; separate Python 3.11, 3.12 and 3.13 CI jobs,
+Ruff quality checks, packaging checks and reproducible measured benchmark
+smoke checks.
+
+**Trade-off:** This is a **single-host, at-least-once** queue. It is not
+distributed consensus, exactly-once external processing or a verified
+production-scale benchmark. Handler code is trusted local Python.
+
+---
+
+## 2. PatchPilot — reducing the attack surface of an AI coding agent
 
 **Repository:** [PatchPilot](https://github.com/harshitethic/PatchPilot)
 **Change reviews:** [Repository trust boundaries](https://github.com/harshitethic/PatchPilot/pull/13) · [Safe workspace lifecycle](https://github.com/harshitethic/PatchPilot/pull/19) · [GitHub URL and subprocess hardening](https://github.com/harshitethic/PatchPilot/pull/21) · [Trusted browser origins](https://github.com/harshitethic/PatchPilot/pull/22)
@@ -21,11 +45,11 @@ Updated: 13 October 2026.
 - Restrict browser origins, bound GitHub issue URL inputs to the official API host, and strip sensitive environment values from test subprocesses.
 - Preserve a reviewable Git diff and version-controlled evidence of what was tested.
 
-**Evidence:** The extended backend suite passed **50 tests** locally and in the Python 3.11/3.12 GitHub Actions matrix; scheduled CodeQL analysis also runs on new changes.
+**Evidence:** The extended backend suite passed **61 tests** locally and in the Python 3.11/3.12 GitHub Actions matrix; scheduled CodeQL analysis also runs on new changes.
 
-**Explicit limitation:** A repository's test scripts can execute arbitrary code despite command-name restrictions. PatchPilot is local-only and **not a sandbox**. The remaining CodeQL command-execution concern and requirements for containers/microVMs, resource limits, and network isolation are tracked in [security issue #23](https://github.com/harshitethic/PatchPilot/issues/23). See [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
+**Explicit limitation:** A repository's test scripts can execute arbitrary code despite command-name restrictions. PatchPilot is local-only and **not a sandbox**. The remaining CodeQL concern and deployment requirements beyond the fail-closed Docker test runner are tracked in [security issue #23](https://github.com/harshitethic/PatchPilot/issues/23). See [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
 
-## 2. RepoPilot — importing and understanding untrusted code
+## 3. RepoPilot — importing and understanding untrusted code
 
 **Repository:** [RepoPilot](https://github.com/harshitethic/RepoPilot)
 **Change reviews:** [ZIP/Git import boundaries](https://github.com/harshitethic/RepoPilot/pull/6) · [Bounded streaming uploads](https://github.com/harshitethic/RepoPilot/pull/15) · [Safe import lifecycle](https://github.com/harshitethic/RepoPilot/pull/17) · [Sanitized API failures](https://github.com/harshitethic/RepoPilot/pull/18)
@@ -46,7 +70,7 @@ Updated: 13 October 2026.
 
 **Limitations:** Resource quotas, sandboxing and authentication are required before offering untrusted ZIP analysis publicly. Repositories can also contain malicious text targeting the AI prompt; indexed text is not trusted instructions.
 
-## 3. PsychologyOS — rescuing a failing full-stack CI pipeline
+## 4. PsychologyOS — rescuing a failing full-stack CI pipeline
 
 **Repository:** [PsychologyOS](https://github.com/harshitethic/PsychologyOS)
 **Change reviews:** [TypeScript/CI repair](https://github.com/harshitethic/PsychologyOS/pull/4) · [Patched PostCSS dependency](https://github.com/harshitethic/PsychologyOS/pull/5) · [Safer admin credential provisioning](https://github.com/harshitethic/PsychologyOS/pull/12)
@@ -67,7 +91,7 @@ Updated: 13 October 2026.
 
 **Limitations:** The three remaining security advisories require a Prisma compatibility and deployment test plan. Do not assume a passing TypeScript check proves every production database operation works.
 
-## 4. FxSound — diagnosing a platform-specific compilation failure
+## 5. FxSound — diagnosing a platform-specific compilation failure
 
 **Repository:** [FxSound Linux/macOS](https://github.com/harshitethic/fxsound-linux-macos)
 **Code review:** [Linux include case fix](https://github.com/harshitethic/fxsound-linux-macos/pull/2)

@@ -16,6 +16,23 @@ I build software across **AI tooling, APIs, full-stack applications, and native 
 
 **What I optimize for:** reproducible setup, observable behavior, clear failure handling, tests that catch regressions, and code that another engineer can review and maintain.
 
+## Engineering spotlight: reliable background work
+
+**[LeaseLedger](https://github.com/harshitethic/LeaseLedger)** is an original,
+single-host **durable job queue** built with Python and SQLite WAL. It tackles
+real backend consistency problems: fencing stale workers, recovering crashed
+leases, idempotent producer requests, transactional audit events, bounded retries
+and dead-letter jobs. Four independent processes compete for work in its
+integration test; all **22 tests pass** across Python 3.11–3.13 in CI.
+
+[Read the architecture](https://github.com/harshitethic/LeaseLedger/blob/main/docs/architecture.md)
+· [Why fencing tokens matter](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md)
+· [See verified CI](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml)
+· [v0.1.0 release](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.0)
+
+*Scope is explicit: at-least-once processing on a single host, not exactly-once
+external effects or a multi-region distributed queue.*
+
 ## Selected engineering work
 
 <table>
@@ -24,7 +41,7 @@ I build software across **AI tooling, APIs, full-stack applications, and native 
 <h3><a href="https://github.com/harshitethic/PatchPilot">PatchPilot</a></h3>
 <p><strong>Local-first AI developer agent · Python · Git</strong></p>
 <p>Takes a repository task through code inspection, change planning, edits in a separate local workspace, test execution, and reviewable Git diffs.</p>
-<p><strong>Engineering focus:</strong> command policy tests, workspace path containment, CodeQL security scanning, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml">backend CI</a>.</p>
+<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, fenced local workspaces, protected diagnostic logs, adversarial regression tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
 <p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a></p>
 </td>
 <td width="50%" valign="top">
@@ -55,7 +72,7 @@ I build software across **AI tooling, APIs, full-stack applications, and native 
 
 ## How I work — engineering evidence
 
-Alongside source code, I maintain [engineering case studies](portfolio/engineering-case-studies.md) showing the problems, design decisions, tests and trade-offs behind my work: **agent safety, ZIP/Git import boundaries, full-stack CI recovery, and native Linux/macOS portability**. Each case links to verifiable PRs and CI results.
+Alongside source code, I maintain [engineering case studies](portfolio/engineering-case-studies.md) showing the problems, design decisions, tests and trade-offs behind my work: **lease fencing, agent isolation, ZIP/Git import boundaries, full-stack CI recovery, and native Linux/macOS portability**. Each case links to verifiable PRs and CI results.
 
 ## Open-source contributions
 
@@ -87,8 +104,16 @@ My earlier Telegram/WhatsApp AI bot repositories have attracted developers and f
 | --- | --- |
 | **Backend & AI** | Python, FastAPI, Node.js, APIs, local LLMs, Ollama, agent workflows |
 | **Frontend** | TypeScript, React, Next.js, JavaScript |
-| **Systems** | C++, Linux, macOS, native audio integrations |
+| **Systems** | C++, Linux, macOS, SQLite WAL, fencing tokens, crash recovery, native audio |
 | **Delivery** | Git, GitHub Actions, Docker, integration tests, VPS deployment, observability |
+
+## Current focus
+
+I publish **reproducible engineering work**, clear failure analyses, and
+maintenance-focused open source rather than maximizing commit counts.
+See the [public portfolio quality roadmap](portfolio/quality-roadmap-2026.md)
+and recent work on [fenced leases](https://github.com/harshitethic/LeaseLedger)
+and [isolated AI-agent test execution](https://github.com/harshitethic/PatchPilot/pull/24).
 
 ## Collaboration
 
