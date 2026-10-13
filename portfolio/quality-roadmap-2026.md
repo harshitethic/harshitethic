@@ -5,7 +5,7 @@ score or a promise of follower growth. Each item counts only with a public
 repository, test result or profile state supporting it. Scope: 20 defined
 milestones across profile, engineering, community and evaluation.
 
-## Completed (15 / 20)
+## Completed (16 / 20)
 
 - [x] Audit public repositories, profile, follower baseline and six pinned projects
 - [x] Record GitHub CodeQL and dependency risk before modifying flagship code
@@ -22,11 +22,12 @@ milestones across profile, engineering, community and evaluation.
 - [x] Publish LeaseLedger tests, architecture docs, technical note, v0.1.1 online recovery improvements and verified release ([CI](https://github.com/harshitethic/LeaseLedger/actions))
 - [x] Link genuine accepted third-party open-source work, rather than opened PR counts
 - [x] Establish a weekly quantitative follower/star progress review against the baseline
+- [x] Respond to a concrete maintainer review on an issue-linked external PR: fixed [ChurchCRM #10484](https://github.com/ChurchCRM/CRM/pull/10484), verified i18next extraction and lint, and passed independent CodeQL/Semgrep checks. Maintainer merge is still pending.
 
-**Finite milestone progress: 75% complete (15/20).** This is not a claim
+**Finite milestone progress: 80% complete (16/20).** This is not a claim
 that the overall mission or the follower target is 75% complete.
 
-## Outstanding (5 / 20)
+## Outstanding (4 / 20)
 
 - [ ] Independently review PatchPilot production/multi-user security despite zero
       open CodeQL findings after [PR #26](https://github.com/harshitethic/PatchPilot/pull/26), and investigate remaining
@@ -35,8 +36,6 @@ that the overall mission or the follower target is 75% complete.
       newly pinned developer tools; avoid polished mock-ups misrepresented as working apps
 - [ ] Add independent multi-user/production threat review and deployment proof
       before presenting any local-only tool as production secure
-- [ ] Complete an issue-linked, externally reviewed new upstream contribution
-      during this mission; maintainer acceptance is outside our control
 - [ ] Obtain independent experienced-engineer feedback and iterate on
       architectural trade-offs, performance evidence, and hiring clarity
 
