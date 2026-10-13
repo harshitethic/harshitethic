@@ -32,7 +32,7 @@ production-scale benchmark. Handler code is trusted local Python.
 ## 2. PatchPilot — reducing the attack surface of an AI coding agent
 
 **Repository:** [PatchPilot](https://github.com/harshitethic/PatchPilot)
-**Change reviews:** [Repository trust boundaries](https://github.com/harshitethic/PatchPilot/pull/13) · [Safe workspace lifecycle](https://github.com/harshitethic/PatchPilot/pull/19) · [Docker test isolation](https://github.com/harshitethic/PatchPilot/pull/24) · [Host Git-only execution and private logs](https://github.com/harshitethic/PatchPilot/pull/25)
+**Change reviews:** [Repository trust boundaries](https://github.com/harshitethic/PatchPilot/pull/13) · [Safe workspace lifecycle](https://github.com/harshitethic/PatchPilot/pull/19) · [Docker test isolation](https://github.com/harshitethic/PatchPilot/pull/24) · [Host Git-only execution and private logs](https://github.com/harshitethic/PatchPilot/pull/25) · [Prevent hostile Git hooks and internal control-file edits](https://github.com/harshitethic/PatchPilot/pull/26)
 **Verification:** [Backend CI](https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml) · [CodeQL Python scanning](https://github.com/harshitethic/PatchPilot/actions/workflows/codeql.yml)
 
 **Problem:** An agent that clones a repository, sends source to an LLM and executes tests must treat repository URLs, symlinks, model-produced edits and workspace IDs as untrusted. Simple string filtering alone is not sufficient.
@@ -46,7 +46,7 @@ production-scale benchmark. Handler code is trusted local Python.
 - Restrict browser origins, bound GitHub issue URL inputs to the official API host, and strip sensitive environment values from test subprocesses.
 - Preserve a reviewable Git diff and version-controlled evidence of what was tested.
 
-**Evidence:** The extended backend suite passed **61 tests** locally and in the Python 3.11/3.12 GitHub Actions matrix; scheduled CodeQL analysis also runs on new changes.
+**Evidence:** The extended backend suite passed **63 tests**, including an adversarial Git-hook integration test, in the Python 3.11/3.12 GitHub Actions matrix. The live Docker isolation workflow and CodeQL analysis also pass. The one remaining CodeQL alert is tracked rather than hidden.
 
 **Explicit limitation:** Repository test commands now use a fail-closed, resource-limited Docker runner and the real Linux isolation integration test passes. This is **not independently audited multi-tenant isolation**: Git cloning and backend plumbing still execute on the host, the API lacks public-service authentication, and one CodeQL command-line-injection finding remains open for review. See [security issue #23](https://github.com/harshitethic/PatchPilot/issues/23) and [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
 

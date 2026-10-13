@@ -28,7 +28,7 @@ that the overall mission or the follower target is 75% complete.
 
 ## Outstanding (5 / 20)
 
-- [ ] Re-review outstanding PatchPilot code-scanning concern and remaining
+- [ ] Complete independent review of the one remaining PatchPilot code-scanning concern (Git configuration mitigations in [PR #26](https://github.com/harshitethic/PatchPilot/pull/26)) and remaining
       PsychologyOS dependency advisories, without hiding legitimate findings
 - [ ] Produce a locally verifiable end-to-end screen recording for the
       newly pinned developer tools; avoid polished mock-ups misrepresented as working apps
