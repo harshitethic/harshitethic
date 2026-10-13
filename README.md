@@ -24,13 +24,16 @@ real backend consistency problems: fencing stale workers, recovering crashed
 leases, idempotent producer requests, transactional audit events, bounded retries
 and dead-letter jobs. Four independent processes compete for work in its
 integration tests, and a killed worker's lease can be reclaimed safely.
-All **30 tests pass** across Python 3.11–3.13 in CI. Version 0.1.1
-adds online WAL-safe backups and integrity verification.
+All **32 tests pass** across Python 3.11–3.13 in CI. Version 0.1.2
+adds seeded fault-injection tests and fixes a verified queue-starvation bug
+where 100+ exhausted leases concealed runnable jobs. Version 0.1.1
+introduced online WAL-safe backups and integrity verification.
 
 [Read the architecture](https://github.com/harshitethic/LeaseLedger/blob/main/docs/architecture.md)
 · [Why fencing tokens matter](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md)
 · [See verified CI](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml)
-· [v0.1.1 release](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.1)
+· [v0.1.2 release](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.2)
+· [Reproduced claim starvation and fix](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/expired-lease-cleanup-progress.md)
 · [Online backup and recovery](https://github.com/harshitethic/LeaseLedger/blob/main/docs/backup-and-recovery.md)
 
 *Scope is explicit: at-least-once processing on a single host, not exactly-once

@@ -19,7 +19,7 @@ milestones across profile, engineering, community and evaluation.
 - [x] Replace PsychologyOS known admin defaults; verify full production build ([PR #12](https://github.com/harshitethic/PsychologyOS/pull/12))
 - [x] Verify FxSound portability on independent Linux and macOS CI ([PR #2](https://github.com/harshitethic/fxsound-linux-macos/pull/2))
 - [x] Develop original LeaseLedger durable queue with fenced concurrent workers ([source](https://github.com/harshitethic/LeaseLedger))
-- [x] Publish LeaseLedger tests, architecture docs, technical note, v0.1.1 online recovery improvements and verified release ([CI](https://github.com/harshitethic/LeaseLedger/actions))
+- [x] Publish LeaseLedger tests, architecture docs, v0.1.2 fault-injection and queue-progress fix, online recovery improvements and verified release ([CI](https://github.com/harshitethic/LeaseLedger/actions))
 - [x] Link genuine accepted third-party open-source work, rather than opened PR counts
 - [x] Establish a weekly quantitative follower/star progress review against the baseline
 - [x] Respond to a concrete maintainer review on an issue-linked external PR: fixed [ChurchCRM #10484](https://github.com/ChurchCRM/CRM/pull/10484), verified i18next extraction and lint, and passed independent CodeQL/Semgrep checks. Maintainer merge is still pending.

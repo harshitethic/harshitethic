@@ -7,7 +7,7 @@ Updated: 14 October 2026.
 ## 1. LeaseLedger — explicit correctness contracts for durable work
 
 **Repository:** [LeaseLedger](https://github.com/harshitethic/LeaseLedger)
-**Evidence:** [CI matrix](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml) · [Release v0.1.1](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.1) · [Fencing-token failure analysis](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md) · [WAL-safe recovery runbook](https://github.com/harshitethic/LeaseLedger/blob/main/docs/backup-and-recovery.md)
+**Evidence:** [CI matrix](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml) · [Release v0.1.2](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.2) · [100-expired-leases bug reproduction](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/expired-lease-cleanup-progress.md) · [Fencing-token failure analysis](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md) · [WAL-safe recovery runbook](https://github.com/harshitethic/LeaseLedger/blob/main/docs/backup-and-recovery.md)
 
 **Problem:** Naive job processing loses work when a worker crashes and allows a
 paused worker to acknowledge a job after its lease has been reassigned.
@@ -17,9 +17,12 @@ claims, monotonic fencing tokens, deadline-validated acknowledgements, worker
 heartbeats, idempotent submissions, bounded retries and dead-letter records.
 Every transition writes a durable audit event in the same transaction.
 
-**Verification:** Thirty automated tests passed on Python 3.11, 3.12 and
+**Verification:** Thirty-two automated tests passed on Python 3.11, 3.12 and
 3.13, including four real processes competing for 48 jobs, an abrupt worker
 process termination followed by fenced recovery, and concurrent online backups.
+A separate deterministic reference model covers 640 seeded operations, while
+a regression creates 121 expired high-priority leases and proves a ready job
+behind them is still claimed in one call. The bug is fixed in v0.1.2.
 SQLite snapshots are verified for page and foreign-key integrity and refuse
 overwriting existing files. Ruff, packaging and benchmark-smoke CI also pass.
 
