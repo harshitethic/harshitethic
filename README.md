@@ -1,99 +1,115 @@
 <div align="center">
+  <img src="https://raw.githubusercontent.com/harshitethic/harshitethic/main/assets/header.svg" width="100%" alt="Harshit Sharma — software engineering portfolio" />
 
-<img src="https://raw.githubusercontent.com/harshitethic/harshitethic/main/assets/header.svg" alt="Harshit Ethic — Developer / Builder" width="100%"/>
+  <h1>Harshit Sharma</h1>
+  <strong>Software engineer · AI developer tools · Backend systems · Cross-platform software</strong>
 
-<br/>
-
-<a href="https://harshitethic.com">🌐 WEBSITE</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://github.com/harshitethic">⌘ GITHUB</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/harshitethic/">LINKEDIN</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://www.instagram.com/harshitethic/">INSTAGRAM</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="mailto:contact@harshitethic.com">✉ EMAIL</a>
-
+  <p>
+    <a href="https://harshitethic.com">Website</a> ·
+    <a href="https://www.linkedin.com/in/harshitethic/">LinkedIn</a> ·
+    <a href="mailto:contact@harshitethic.com">Email</a> ·
+    <a href="https://github.com/harshitethic?tab=repositories">Repositories</a>
+  </p>
 </div>
 
----
+I build software across **AI tooling, APIs, full-stack applications, and native systems**. My work spans shipping interfaces and backend services, integrating local language models, debugging production environments, and contributing fixes to other teams' open-source projects.
 
-## `root@harshitethic:~$ whoami`
+**What I optimize for:** reproducible setup, observable behavior, clear failure handling, tests that catch regressions, and code that another engineer can review and maintain.
 
-**Harshit Sharma** — self-taught developer, builder and freelancer.
+## Selected engineering work
 
-I build products across **full-stack development, Web3/blockchain, AI, automation and infrastructure** — from interfaces and APIs to bots, smart contracts and production deployments.
+<table>
+<tr>
+<td width="50%" valign="top">
 
-```text
-ideas → architecture → code → deployment → impact
-```
+### [PatchPilot](https://github.com/harshitethic/PatchPilot)
+**Local-first AI developer agent · Python · Git**
 
----
+Takes a repository task through code inspection, change planning, edits in an isolated workspace, test execution, and reviewable Git diffs.
 
-## `01 / BUILDING ACROSS THE STACK`
+**Engineering focus:** command-execution policies, workspace path containment, regression tests, and [backend CI](https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml).
 
-`FULL STACK` · `WEB3 / BLOCKCHAIN` · `AI / AUTOMATION` · `SYSTEMS / INFRA`
+[Source & architecture →](https://github.com/harshitethic/PatchPilot#readme)
 
-**Web:** React · Node.js · JavaScript · PHP · HTML · CSS  
-**Backend:** Node.js · Python · REST APIs · WebSockets · MongoDB · MySQL  
-**Web3:** Solidity · Ethereum · BSC · Solana · MetaMask · smart contracts  
-**AI:** OpenAI · AI assistants · OCR · contextual prompting · automation  
-**Infra:** Linux · VPS · DNS · WHM/cPanel · SSL · deployment · backups
+</td>
+<td width="50%" valign="top">
 
----
+### [FxSound: Linux & macOS](https://github.com/harshitethic/fxsound-linux-macos)
+**Native audio integration · C++ · PipeWire · CoreAudio**
 
-## `02 / LATEST REPOSITORIES`
+Unofficial community ports retaining the upstream DfxDsp processing engine while adapting audio transport to Linux and macOS.
 
-<!-- START_LATEST_REPOS -->
-| Repository | Description | Stars |
-|---|---|---:|
-| [harshitethic](https://github.com/harshitethic/harshitethic) | Independent developer building practical software across AI, Web3, automation, and infrastructure. | 0 |
-| [telegram-youtube-downloader](https://github.com/harshitethic/telegram-youtube-downloader) | It's a script in nodejs which helps to download youtube video on telegram via bot. | 8 |
-| [fxsound-linux-macos](https://github.com/harshitethic/fxsound-linux-macos) | Unofficial native Linux and macOS ports of FxSound — upstream DfxDsp, PipeWire/CoreAudio, install... | 0 |
-| [crypto-wallet-checker](https://github.com/harshitethic/crypto-wallet-checker) | Crypto Wallet Checker is a Telegram bot that allows you to fetch the balance of Ethereum wallets ... | 3 |
-| [PsychologyOS](https://github.com/harshitethic/PsychologyOS) | Open-source psychology learning platform built to help a friend with college coursework, featurin... | 0 |
-| [AI-Mock-Interviewer](https://github.com/harshitethic/AI-Mock-Interviewer) | A free, local-AI mock interview platform for students with resume-based questions, voice intervie... | 0 |
-<!-- END_LATEST_REPOS -->
+**Engineering focus:** platform boundaries, native builds, audio processing, installer workflows, and [platform CI](https://github.com/harshitethic/fxsound-linux-macos/actions).
 
----
+**Status:** alpha software; see the README for platform-specific limitations.
 
-## `03 / GITHUB TELEMETRY`
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
-<img src="https://raw.githubusercontent.com/harshitethic/harshitethic/main/assets/github-telemetry.svg" alt="GitHub telemetry" width="100%"/>
+### [PsychologyOS](https://github.com/harshitethic/PsychologyOS)
+**Full-stack learning platform · TypeScript · Next.js**
 
----
+Study materials, practice quizzes, mock exams, progress tracking, accounts, moderation, and an optional local-AI tutor.
 
-## `04 / CONNECT`
+**Engineering focus:** end-to-end product architecture, health checks, and [automated project validation](https://github.com/harshitethic/PsychologyOS/actions/workflows/ci.yml).
 
-<div align="center">
+[Repository →](https://github.com/harshitethic/PsychologyOS)
 
-### `contact@harshitethic.com`
+</td>
+<td width="50%" valign="top">
 
-<a href="mailto:contact@harshitethic.com?subject=Project%20Inquiry">**SEND EMAIL →**</a>
+### [RepoPilot](https://github.com/harshitethic/RepoPilot)
+**Local codebase exploration · Python · FastAPI · React · Ollama**
 
-<br/>
+Clones or imports repositories, indexes source, exposes file trees and code search, and supplies relevant context to a local language model for questions about the code.
 
-<a href="https://harshitethic.com">harshitethic.com</a>
-&nbsp;·&nbsp;
-<a href="https://github.com/harshitethic">github.com/harshitethic</a>
-&nbsp;·&nbsp;
-<a href="https://www.linkedin.com/in/harshitethic/">linkedin.com/in/harshitethic</a>
-&nbsp;·&nbsp;
-<a href="https://www.instagram.com/harshitethic/">instagram.com/harshitethic</a>
+**Engineering focus:** repository ingestion, search, context retrieval, and [frontend/backend CI](https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml).
 
-</div>
+[Repository →](https://github.com/harshitethic/RepoPilot)
 
----
+</td>
+</tr>
+</table>
 
-<div align="center">
+## Open-source contributions
 
-```text
-HARSHIT ETHIC
-developer • builder • problem solver
+As of **13 October 2026**, I have **20 merged pull requests across 9 repositories owned by other developers/organizations**. These include bug fixes, tests, developer tooling, and documentation. Browse the [merged PR history](https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Aharshitethic+-user%3Aharshitethic).
 
-web3 • ai • automation • infrastructure
-```
+| Project | Accepted work |
+| --- | --- |
+| [Hebbian-Robotics/hflow](https://github.com/Hebbian-Robotics/hflow/pulls?q=is%3Apr+is%3Amerged+author%3Aharshitethic) | 9 merged PRs involving data validation, artifact handling, tests, and examples |
+| [Internet Archive / Open Library](https://github.com/internetarchive/openlibrary/pull/13854) | Corrected out-of-date developer documentation |
+| [ChurchCRM](https://github.com/ChurchCRM/CRM/pull/10431) | Fixed floating controls overlapping modal dialogs |
+| [StaveIndustries / woo-pay](https://github.com/StaveIndustries/woo-pay/pulls?q=is%3Apr+is%3Amerged+author%3Aharshitethic) | Improved WooCommerce error reporting and payment-failure persistence |
+| [pranjalparmar/fastdocparse](https://github.com/pranjalparmar/fastdocparse/pulls?q=is%3Apr+is%3Amerged+author%3Aharshitethic) | Simplified CLI errors and grounding logic |
 
-**`// keep building.`**
+*PR acceptance and code review are more informative than a raw count of opened PRs. Current status and diffs are available via the links above.*
 
-</div>
+## Earlier projects with community adoption
+
+My earlier Telegram/WhatsApp AI bot repositories have attracted developers and forks. They are **legacy projects built around older APIs**, not examples of my current production architecture.
+
+| Repository | GitHub stars · forks (13 Oct 2026) |
+| --- | ---: |
+| [chatgpt-bot-telegram](https://github.com/harshitethic/chatgpt-bot-telegram) | 141 · 148 |
+| [ChatGPT-Telegram-Bot](https://github.com/harshitethic/ChatGPT-Telegram-Bot) | 72 · 371 |
+| [whatsapp-chatgpt](https://github.com/harshitethic/whatsapp-chatgpt) | 68 · 168 |
+
+## Engineering toolbox
+
+| Area | Technology |
+| --- | --- |
+| **Backend & AI** | Python, FastAPI, Node.js, APIs, local LLMs, Ollama, agent workflows |
+| **Frontend** | TypeScript, React, Next.js, JavaScript |
+| **Systems** | C++, Linux, macOS, native audio integrations |
+| **Delivery** | Git, GitHub Actions, Docker, integration tests, VPS deployment, observability |
+
+## Collaboration
+
+I enjoy tackling concrete bugs, building useful developer tools, and working through edge cases with maintainers. For engineering opportunities, architecture discussions, or collaborations:
+
+**[harshitethic.com](https://harshitethic.com)** · **[LinkedIn](https://www.linkedin.com/in/harshitethic/)** · **[contact@harshitethic.com](mailto:contact@harshitethic.com)**
+
+<sub>Evidence first: source code, reproducible examples, tests, PR discussions, and the trade-offs behind implementation.</sub>
