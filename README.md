@@ -120,6 +120,17 @@ See the [public portfolio quality roadmap](portfolio/quality-roadmap-2026.md)
 and recent work on [fenced leases](https://github.com/harshitethic/LeaseLedger)
 and [isolated AI-agent test execution](https://github.com/harshitethic/PatchPilot/pull/24).
 
+## Security-focused developer tooling
+
+[ClonePeek](https://github.com/harshitethic/clonepeek) is a dependency-free,
+offline preflight scanner for execution-capable repository config
+(editor auto-tasks, npm lifecycle scripts, devcontainer commands and MCP
+servers). In [v0.2.1](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.1),
+I reproduced and fixed a real Git filesystem-monitor execution risk in its
+changed-file mode, with [an adversarial regression and analysis](https://github.com/harshitethic/clonepeek/blob/main/docs/GIT-CONFIG-ISOLATION.md).
+Its 29 tests run across Linux, macOS and Windows CI. It is a heuristic
+inventory aid, not a malware verdict or sandbox.
+
 ## Collaboration
 
 I enjoy tackling concrete bugs, building useful developer tools, and working through edge cases with maintainers. For engineering opportunities, architecture discussions, or collaborations:

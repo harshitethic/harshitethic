@@ -108,6 +108,33 @@ production-scale benchmark. Handler code is trusted local Python.
 
 ---
 
+## 6. ClonePeek — reproducible passive-scan trust-boundary repair
+
+**Repository:** [ClonePeek](https://github.com/harshitethic/clonepeek)
+**Code review:** [Git filesystem-monitor execution hardening](https://github.com/harshitethic/clonepeek/pull/5)
+**Evidence:** [Cross-platform CI](https://github.com/harshitethic/clonepeek/actions/workflows/ci.yml) · [v0.2.1 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.1) · [Reproduction and trust boundaries](https://github.com/harshitethic/clonepeek/blob/main/docs/GIT-CONFIG-ISOLATION.md)
+
+**Problem:** An offline scanner that classifies execution-capable repository
+configuration should not execute repository-defined code itself. In the
+original changed-file implementation, Git's local core.fsmonitor config
+could dispatch an executable helper during a name-only diff.
+
+**Reproduction and mitigation:** A disposable repo configured with an
+executable filesystem monitor produced an unexpected EXECUTED marker on
+two original scanner invocations. The fixed path filters inherited Git
+environment overrides, ignores global/system config, explicitly disables
+filesystem monitors, hooks, external diffs and text conversion, and keeps
+strict argument/ref validation.
+
+**Verification:** The 29-test suite includes the adversarial regression.
+All six GitHub Actions combinations passed on Ubuntu, Windows and macOS
+with Python 3.10 and 3.13.
+
+**Limitations:** ClonePeek still invokes an installed Git binary, which is
+not fully sandboxed. Static scan results are not malware verdicts.
+
+---
+
 ## Verification philosophy
 
 The most useful engineering signal is not a crowded green contribution calendar. It is a **traceable chain of evidence**: reproducible defect, constrained implementation, regression test, passing CI, documented trade-offs, and accepted code review.
