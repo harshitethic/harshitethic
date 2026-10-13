@@ -93,6 +93,8 @@ As of **13 October 2026**, I have **20 merged pull requests across 9 repositorie
 
 **Recent maintainer review follow-through:** On [ChurchCRM PR #10484](https://github.com/ChurchCRM/CRM/pull/10484), I corrected the translation-extraction configuration in response to maintainer feedback, verified that the requested string appeared in the generated catalog without committing it, and passed lint plus independent security checks. **The PR is still open**, so it is not included in the merged-contribution count.
 
+**Maintaining community contributions:** [WhatsApp bot PR #40](https://github.com/harshitethic/whatsapp-chatgpt/pull/40) incorporated a correction from [lucaslokchan's earlier PR #19](https://github.com/harshitethic/whatsapp-chatgpt/pull/19), preserved verified co-author credit, and added privacy tests that prevent raw chat messages and provider exceptions from reaching logs. Both Node 20 and Node 22 CI checks passed. Historical unmerged credential-exposing PRs were closed with rotation notices; closing them does not erase the old public diffs.
+
 ## Earlier projects with community adoption
 
 My earlier Telegram/WhatsApp AI bot repositories have attracted developers and forks. They are **legacy projects built around older APIs**, not examples of my current production architecture.
