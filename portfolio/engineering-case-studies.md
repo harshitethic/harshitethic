@@ -46,9 +46,9 @@ production-scale benchmark. Handler code is trusted local Python.
 - Restrict browser origins, bound GitHub issue URL inputs to the official API host, and strip sensitive environment values from test subprocesses.
 - Preserve a reviewable Git diff and version-controlled evidence of what was tested.
 
-**Evidence:** The extended backend suite passed **63 tests**, including an adversarial Git-hook integration test, in the Python 3.11/3.12 GitHub Actions matrix. The live Docker isolation workflow and CodeQL analysis also pass. The one remaining CodeQL alert is tracked rather than hidden.
+**Evidence:** The extended backend suite passed **63 tests**, including an adversarial Git-hook integration test, in the Python 3.11/3.12 GitHub Actions matrix. The live Docker isolation workflow and CodeQL analysis also pass. The 14 October 2026 post-merge scan reported **zero open CodeQL alerts**; no findings were manually dismissed to produce that result.
 
-**Explicit limitation:** Repository test commands now use a fail-closed, resource-limited Docker runner and the real Linux isolation integration test passes. This is **not independently audited multi-tenant isolation**: Git cloning and backend plumbing still execute on the host, the API lacks public-service authentication, and one CodeQL command-line-injection finding remains open for review. See [security issue #23](https://github.com/harshitethic/PatchPilot/issues/23) and [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
+**Explicit limitation:** Repository test commands use a fail-closed, resource-limited Docker runner and the real Linux isolation integration test passes. This is **not independently audited multi-tenant isolation**: Git cloning and backend plumbing still execute on the host, the API lacks public-service authentication, and a clean CodeQL scan is not proof of comprehensive security. See [security issue #23](https://github.com/harshitethic/PatchPilot/issues/23) and [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
 
 ## 3. RepoPilot — importing and understanding untrusted code
 
