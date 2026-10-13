@@ -29,7 +29,7 @@ Updated: 13 October 2026.
 
 **Repository:** [RepoPilot](https://github.com/harshitethic/RepoPilot)
 **Change reviews:** [ZIP/Git import boundaries](https://github.com/harshitethic/RepoPilot/pull/6) · [Bounded streaming uploads](https://github.com/harshitethic/RepoPilot/pull/15) · [Safe import lifecycle](https://github.com/harshitethic/RepoPilot/pull/17) · [Sanitized API failures](https://github.com/harshitethic/RepoPilot/pull/18)
-**Verification:** [Frontend and backend CI](https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml) · [Python and JavaScript CodeQL](https://github.com/harshitethic/RepoPilot/actions/workflows/codeql.yml)
+**Verification:** [Frontend and backend CI](https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml) · [Python and JavaScript CodeQL](https://github.com/harshitethic/RepoPilot/actions/workflows/codeql.yml) · [HTTP-level demonstration](https://github.com/harshitethic/RepoPilot/blob/main/docs/http-smoke-test.md)
 
 **Problem:** A codebase explorer must ingest archives and Git repositories while minimizing filesystem traversal, unintended file reads, collision-prone temporary files and leakage of internal server errors.
 
@@ -42,7 +42,7 @@ Updated: 13 October 2026.
 - Return sanitized HTTP errors while logging internal exceptions server-side.
 - Repair a JSX error that previously prevented the frontend production build.
 
-**Evidence:** The backend suite grew from seven initial import-boundary tests to **26 tests** with API-error, health-probe and import-lifecycle regression coverage. [PR #19](https://github.com/harshitethic/RepoPilot/pull/19) ensures an optional Ollama outage reports degraded availability without exposing an exception. The backend and frontend CI jobs and Python/JavaScript CodeQL workflows run on PRs.
+**Evidence:** The backend suite grew from seven initial import-boundary tests to **30 tests** including four real ASGI/HTTP smoke tests covering ZIP upload, source indexing and search, repository lifecycle and degraded AI availability. [PR #19](https://github.com/harshitethic/RepoPilot/pull/19) ensures an optional Ollama outage reports degraded availability without exposing an exception. The backend and frontend CI jobs and Python/JavaScript CodeQL workflows run on PRs.
 
 **Limitations:** Resource quotas, sandboxing and authentication are required before offering untrusted ZIP analysis publicly. Repositories can also contain malicious text targeting the AI prompt; indexed text is not trusted instructions.
 
