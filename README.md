@@ -53,6 +53,10 @@ I build software across **AI tooling, APIs, full-stack applications, and native 
 </tr>
 </table>
 
+## How I work — engineering evidence
+
+Alongside source code, I maintain [engineering case studies](portfolio/engineering-case-studies.md) showing the problems, design decisions, tests and trade-offs behind my work: **agent safety, ZIP/Git import boundaries, full-stack CI recovery, and native Linux/macOS portability**. Each case links to verifiable PRs and CI results.
+
 ## Open-source contributions
 
 As of **13 October 2026**, I have **20 merged pull requests across 9 repositories owned by other developers/organizations**. These include bug fixes, tests, developer tooling, and documentation. Browse the [merged PR history](https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Aharshitethic+-user%3Aharshitethic).
