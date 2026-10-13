@@ -2,12 +2,12 @@
 
 A selection of technical work with **links to source, regression tests and CI**. These notes cover the concrete engineering decisions behind the projects, including their current limitations. They are intended to be checked against the public repositories rather than taken on faith.
 
-Updated: 13 October 2026.
+Updated: 14 October 2026.
 
 ## 1. LeaseLedger — explicit correctness contracts for durable work
 
 **Repository:** [LeaseLedger](https://github.com/harshitethic/LeaseLedger)
-**Evidence:** [CI matrix](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml) · [Release v0.1.0](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.0) · [Fencing-token failure analysis](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md)
+**Evidence:** [CI matrix](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml) · [Release v0.1.1](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.1) · [Fencing-token failure analysis](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md) · [WAL-safe recovery runbook](https://github.com/harshitethic/LeaseLedger/blob/main/docs/backup-and-recovery.md)
 
 **Problem:** Naive job processing loses work when a worker crashes and allows a
 paused worker to acknowledge a job after its lease has been reassigned.
@@ -17,10 +17,11 @@ claims, monotonic fencing tokens, deadline-validated acknowledgements, worker
 heartbeats, idempotent submissions, bounded retries and dead-letter records.
 Every transition writes a durable audit event in the same transaction.
 
-**Verification:** Twenty-two passing automated tests, including four real
-processes competing for 48 jobs; separate Python 3.11, 3.12 and 3.13 CI jobs,
-Ruff quality checks, packaging checks and reproducible measured benchmark
-smoke checks.
+**Verification:** Thirty automated tests passed on Python 3.11, 3.12 and
+3.13, including four real processes competing for 48 jobs, an abrupt worker
+process termination followed by fenced recovery, and concurrent online backups.
+SQLite snapshots are verified for page and foreign-key integrity and refuse
+overwriting existing files. Ruff, packaging and benchmark-smoke CI also pass.
 
 **Trade-off:** This is a **single-host, at-least-once** queue. It is not
 distributed consensus, exactly-once external processing or a verified
@@ -31,7 +32,7 @@ production-scale benchmark. Handler code is trusted local Python.
 ## 2. PatchPilot — reducing the attack surface of an AI coding agent
 
 **Repository:** [PatchPilot](https://github.com/harshitethic/PatchPilot)
-**Change reviews:** [Repository trust boundaries](https://github.com/harshitethic/PatchPilot/pull/13) · [Safe workspace lifecycle](https://github.com/harshitethic/PatchPilot/pull/19) · [GitHub URL and subprocess hardening](https://github.com/harshitethic/PatchPilot/pull/21) · [Trusted browser origins](https://github.com/harshitethic/PatchPilot/pull/22)
+**Change reviews:** [Repository trust boundaries](https://github.com/harshitethic/PatchPilot/pull/13) · [Safe workspace lifecycle](https://github.com/harshitethic/PatchPilot/pull/19) · [Docker test isolation](https://github.com/harshitethic/PatchPilot/pull/24) · [Host Git-only execution and private logs](https://github.com/harshitethic/PatchPilot/pull/25)
 **Verification:** [Backend CI](https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml) · [CodeQL Python scanning](https://github.com/harshitethic/PatchPilot/actions/workflows/codeql.yml)
 
 **Problem:** An agent that clones a repository, sends source to an LLM and executes tests must treat repository URLs, symlinks, model-produced edits and workspace IDs as untrusted. Simple string filtering alone is not sufficient.
@@ -47,7 +48,7 @@ production-scale benchmark. Handler code is trusted local Python.
 
 **Evidence:** The extended backend suite passed **61 tests** locally and in the Python 3.11/3.12 GitHub Actions matrix; scheduled CodeQL analysis also runs on new changes.
 
-**Explicit limitation:** A repository's test scripts can execute arbitrary code despite command-name restrictions. PatchPilot is local-only and **not a sandbox**. The remaining CodeQL concern and deployment requirements beyond the fail-closed Docker test runner are tracked in [security issue #23](https://github.com/harshitethic/PatchPilot/issues/23). See [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
+**Explicit limitation:** Repository test commands now use a fail-closed, resource-limited Docker runner and the real Linux isolation integration test passes. This is **not independently audited multi-tenant isolation**: Git cloning and backend plumbing still execute on the host, the API lacks public-service authentication, and one CodeQL command-line-injection finding remains open for review. See [security issue #23](https://github.com/harshitethic/PatchPilot/issues/23) and [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
 
 ## 3. RepoPilot — importing and understanding untrusted code
 

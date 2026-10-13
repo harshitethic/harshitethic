@@ -23,12 +23,15 @@ single-host **durable job queue** built with Python and SQLite WAL. It tackles
 real backend consistency problems: fencing stale workers, recovering crashed
 leases, idempotent producer requests, transactional audit events, bounded retries
 and dead-letter jobs. Four independent processes compete for work in its
-integration test; all **22 tests pass** across Python 3.11–3.13 in CI.
+integration tests, and a killed worker's lease can be reclaimed safely.
+All **30 tests pass** across Python 3.11–3.13 in CI. Version 0.1.1
+adds online WAL-safe backups and integrity verification.
 
 [Read the architecture](https://github.com/harshitethic/LeaseLedger/blob/main/docs/architecture.md)
 · [Why fencing tokens matter](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md)
 · [See verified CI](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml)
-· [v0.1.0 release](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.0)
+· [v0.1.1 release](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.1)
+· [Online backup and recovery](https://github.com/harshitethic/LeaseLedger/blob/main/docs/backup-and-recovery.md)
 
 *Scope is explicit: at-least-once processing on a single host, not exactly-once
 external effects or a multi-region distributed queue.*
