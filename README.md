@@ -23,8 +23,8 @@ I build software across **AI tooling, APIs, full-stack applications, and native 
 <td width="50%" valign="top">
 <h3><a href="https://github.com/harshitethic/PatchPilot">PatchPilot</a></h3>
 <p><strong>Local-first AI developer agent · Python · Git</strong></p>
-<p>Takes a repository task through code inspection, change planning, edits in an isolated workspace, test execution, and reviewable Git diffs.</p>
-<p><strong>Engineering focus:</strong> command-execution policies, workspace path containment, regression tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml">backend CI</a>.</p>
+<p>Takes a repository task through code inspection, change planning, edits in a separate local workspace, test execution, and reviewable Git diffs.</p>
+<p><strong>Engineering focus:</strong> command policy tests, workspace path containment, CodeQL security scanning, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml">backend CI</a>.</p>
 <p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a></p>
 </td>
 <td width="50%" valign="top">
@@ -47,7 +47,7 @@ I build software across **AI tooling, APIs, full-stack applications, and native 
 <h3><a href="https://github.com/harshitethic/RepoPilot">RepoPilot</a></h3>
 <p><strong>Local codebase exploration · Python · FastAPI · React · Ollama</strong></p>
 <p>Clones or imports repositories, indexes source, exposes file trees and code search, and supplies relevant context to a local language model for questions about the code.</p>
-<p><strong>Engineering focus:</strong> safe repository ingestion, search, context retrieval, and <a href="https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml">frontend/backend CI</a>.</p>
+<p><strong>Engineering focus:</strong> safe streaming imports, error handling, CodeQL security scanning, and <a href="https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml">frontend/backend CI</a>.</p>
 <p><a href="https://github.com/harshitethic/RepoPilot">Repository →</a></p>
 </td>
 </tr>

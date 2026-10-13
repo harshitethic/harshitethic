@@ -7,8 +7,8 @@ Updated: 13 October 2026.
 ## 1. PatchPilot — reducing the attack surface of an AI coding agent
 
 **Repository:** [PatchPilot](https://github.com/harshitethic/PatchPilot)
-**Change review:** [Repository trust boundary hardening](https://github.com/harshitethic/PatchPilot/pull/13)
-**Verification:** [Backend CI](https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml)
+**Change reviews:** [Repository trust boundaries](https://github.com/harshitethic/PatchPilot/pull/13) · [Safe workspace lifecycle](https://github.com/harshitethic/PatchPilot/pull/19) · [GitHub URL and subprocess hardening](https://github.com/harshitethic/PatchPilot/pull/21) · [Trusted browser origins](https://github.com/harshitethic/PatchPilot/pull/22)
+**Verification:** [Backend CI](https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml) · [CodeQL Python scanning](https://github.com/harshitethic/PatchPilot/actions/workflows/codeql.yml)
 
 **Problem:** An agent that clones a repository, sends source to an LLM and executes tests must treat repository URLs, symlinks, model-produced edits and workspace IDs as untrusted. Simple string filtering alone is not sufficient.
 
@@ -16,39 +16,41 @@ Updated: 13 October 2026.
 
 - Normalize GitHub HTTPS clone URLs. Reject local file URLs, alternate hosts, credential-bearing URLs, and unexpected path segments.
 - Resolve context paths within the repository root and reject symlink escapes.
-- Stage and validate model edits before applying them; reject duplicate edits that would otherwise overwrite a prior change.
-- Run generated test commands through a restricted parser instead of a shell.
-- Preserve a human-readable Git diff as the main review artifact.
+- Stage model edits in memory, including sequential edits to the same file, and apply only after every operation is validated.
+- Add workspace inventory, private-file protection, deletion guards and default dry-run cleanup.
+- Restrict browser origins, bound GitHub issue URL inputs to the official API host, and strip sensitive environment values from test subprocesses.
+- Preserve a reviewable Git diff and version-controlled evidence of what was tested.
 
-**Evidence:** The hardening change adds seven adversarial regression tests. The full backend suite passed 32 tests locally; GitHub Actions validated it on Python 3.11 and 3.12.
+**Evidence:** The extended backend suite passed **50 tests** locally and in the Python 3.11/3.12 GitHub Actions matrix; scheduled CodeQL analysis also runs on new changes.
 
-**Explicit limitation:** A repository's own test scripts can execute arbitrary code despite command-name restrictions. PatchPilot is a local development tool; true untrusted workloads require containers or microVMs, bounded resources and network isolation. See [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
+**Explicit limitation:** A repository's test scripts can execute arbitrary code despite command-name restrictions. PatchPilot is local-only and **not a sandbox**. The remaining CodeQL command-execution concern and requirements for containers/microVMs, resource limits, and network isolation are tracked in [security issue #23](https://github.com/harshitethic/PatchPilot/issues/23). See [security boundaries](https://github.com/harshitethic/PatchPilot/blob/main/docs/security-boundaries.md).
 
 ## 2. RepoPilot — importing and understanding untrusted code
 
 **Repository:** [RepoPilot](https://github.com/harshitethic/RepoPilot)
-**Change review:** [ZIP/Git import hardening and frontend fix](https://github.com/harshitethic/RepoPilot/pull/6)
-**Verification:** [Frontend and backend CI](https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml)
+**Change reviews:** [ZIP/Git import boundaries](https://github.com/harshitethic/RepoPilot/pull/6) · [Bounded streaming uploads](https://github.com/harshitethic/RepoPilot/pull/15) · [Safe import lifecycle](https://github.com/harshitethic/RepoPilot/pull/17) · [Sanitized API failures](https://github.com/harshitethic/RepoPilot/pull/18)
+**Verification:** [Frontend and backend CI](https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml) · [Python and JavaScript CodeQL](https://github.com/harshitethic/RepoPilot/actions/workflows/codeql.yml)
 
 **Problem:** A codebase explorer must ingest archives and Git repositories while minimizing filesystem traversal, unintended file reads, collision-prone temporary files and leakage of internal server errors.
 
 **Engineering work:**
 
 - Add path boundary checks and refuse symlinked indexed files.
-- Use a randomly created temporary file for ZIP uploads rather than a predictable user-derived path.
+- Stream ZIP uploads in bounded chunks into unique private temporary files rather than loading entire archives into memory; enforce archive size limits and clean up failures.
+- Add repository inventory and an import-count limit, refuse symlinked import directories, and preview stale cleanup before any deletion.
 - Reject blank searches, tighten canonical repository URL checks and correct line-count reporting.
-- Add seven network-free regression tests, including ZIP-slip and symlink cases.
-- Repair an existing React JSX error that prevented Vite from building.
+- Return sanitized HTTP errors while logging internal exceptions server-side.
+- Repair a JSX error that previously prevented the frontend production build.
 
-**Evidence:** The seven new tests passed on macOS and Kali; both GitHub Actions jobs passed on the merged PR.
+**Evidence:** The backend suite grew from seven initial import-boundary tests to **26 tests** with API-error, health-probe and import-lifecycle regression coverage. [PR #19](https://github.com/harshitethic/RepoPilot/pull/19) ensures an optional Ollama outage reports degraded availability without exposing an exception. The backend and frontend CI jobs and Python/JavaScript CodeQL workflows run on PRs.
 
 **Limitations:** Resource quotas, sandboxing and authentication are required before offering untrusted ZIP analysis publicly. Repositories can also contain malicious text targeting the AI prompt; indexed text is not trusted instructions.
 
 ## 3. PsychologyOS — rescuing a failing full-stack CI pipeline
 
 **Repository:** [PsychologyOS](https://github.com/harshitethic/PsychologyOS)
-**Change reviews:** [TypeScript and CI repair](https://github.com/harshitethic/PsychologyOS/pull/4) · [Patched PostCSS dependency](https://github.com/harshitethic/PsychologyOS/pull/5)
-**Verification:** [GitHub Actions CI](https://github.com/harshitethic/PsychologyOS/actions/workflows/ci.yml)
+**Change reviews:** [TypeScript/CI repair](https://github.com/harshitethic/PsychologyOS/pull/4) · [Patched PostCSS dependency](https://github.com/harshitethic/PsychologyOS/pull/5) · [Safer admin credential provisioning](https://github.com/harshitethic/PsychologyOS/pull/12)
+**Verification:** [GitHub Actions CI](https://github.com/harshitethic/PsychologyOS/actions/workflows/ci.yml) · [TypeScript CodeQL](https://github.com/harshitethic/PsychologyOS/actions/workflows/codeql.yml)
 
 **Problem:** The full-stack education project was failing TypeScript checks in the admin password route, profile year validation and curriculum seed types. The health smoke-test runner also used a module-incompatible top-level await.
 
@@ -59,8 +61,9 @@ Updated: 13 October 2026.
 - Remove duplicate curriculum mapping keys.
 - Wrap the health test in a valid asynchronous entry point.
 - Apply compatible lockfile updates and a narrow PostCSS override instead of forcing a framework/database major upgrade.
+- Remove shared admin default passwords and predictable session signing secrets, use private atomic credential-file provisioning, and avoid printing credential material.
 
-**Evidence:** GitHub Actions now passes on main for type checking, project health verification and the doctor checks. The npm audit findings were reduced from seven to three; the remaining reports involve Prisma and its dependency chain.
+**Evidence:** GitHub Actions passes TypeScript checks, health tests and admin setup tests; the extra six credential regressions validate hashed storage, permissions and refusal of symlinks. The optimized Next.js production build was verified separately. The first three CodeQL findings from insecure local setup scripts have been resolved on `main`. npm audit advisories dropped from seven to three, remaining in Prisma's dependency chain.
 
 **Limitations:** The three remaining security advisories require a Prisma compatibility and deployment test plan. Do not assume a passing TypeScript check proves every production database operation works.
 
