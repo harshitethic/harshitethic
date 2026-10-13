@@ -74,7 +74,7 @@ Updated: 13 October 2026.
 
 **Approach:** Reproduce the failure using Linux CMake; trace the missing header include; change include capitalization while preserving native Windows-compatible behavior; rerun the complete DSP core build and preset tests.
 
-**Evidence:** The patched core compiled on Kali. The DSP smoke test completed its eight signal-processing modes and the factory-preset audio and round-trip checks passed locally. Independent CI for this PR is the final authority for cross-platform behavior.
+**Evidence:** The patched core compiled on Kali. The DSP smoke test completed its eight signal-processing modes and the factory-preset audio and round-trip checks passed locally. The updated pull request passed independent Linux (DSP and PipeWire) and macOS build/test workflows before merge. Both main-branch workflows also run on matching source changes.
 
 **Limitations:** A passing DSP unit test does not prove full live PipeWire device routing, GUI interaction or audio latency on every distribution. Native audio ports remain alpha software.
 
