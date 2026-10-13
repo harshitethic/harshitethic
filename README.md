@@ -21,54 +21,34 @@ I build software across **AI tooling, APIs, full-stack applications, and native 
 <table>
 <tr>
 <td width="50%" valign="top">
-
-### [PatchPilot](https://github.com/harshitethic/PatchPilot)
-**Local-first AI developer agent · Python · Git**
-
-Takes a repository task through code inspection, change planning, edits in an isolated workspace, test execution, and reviewable Git diffs.
-
-**Engineering focus:** command-execution policies, workspace path containment, regression tests, and [backend CI](https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml).
-
-[Source & architecture →](https://github.com/harshitethic/PatchPilot#readme)
-
+<h3><a href="https://github.com/harshitethic/PatchPilot">PatchPilot</a></h3>
+<p><strong>Local-first AI developer agent · Python · Git</strong></p>
+<p>Takes a repository task through code inspection, change planning, edits in an isolated workspace, test execution, and reviewable Git diffs.</p>
+<p><strong>Engineering focus:</strong> command-execution policies, workspace path containment, regression tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/backend-ci.yml">backend CI</a>.</p>
+<p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a></p>
 </td>
 <td width="50%" valign="top">
-
-### [FxSound: Linux & macOS](https://github.com/harshitethic/fxsound-linux-macos)
-**Native audio integration · C++ · PipeWire · CoreAudio**
-
-Unofficial community ports retaining the upstream DfxDsp processing engine while adapting audio transport to Linux and macOS.
-
-**Engineering focus:** platform boundaries, native builds, audio processing, installer workflows, and [platform CI](https://github.com/harshitethic/fxsound-linux-macos/actions).
-
-**Status:** alpha software; see the README for platform-specific limitations.
-
+<h3><a href="https://github.com/harshitethic/fxsound-linux-macos">FxSound: Linux and macOS</a></h3>
+<p><strong>Native audio integration · C++ · PipeWire · CoreAudio</strong></p>
+<p>Unofficial community ports retaining the upstream DfxDsp processing engine while adapting audio transport to Linux and macOS.</p>
+<p><strong>Engineering focus:</strong> platform boundaries, native builds, audio processing, installer workflows, and <a href="https://github.com/harshitethic/fxsound-linux-macos/actions">platform CI</a>.</p>
+<p><strong>Status:</strong> alpha software; see the README for platform-specific limitations.</p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-
-### [PsychologyOS](https://github.com/harshitethic/PsychologyOS)
-**Full-stack learning platform · TypeScript · Next.js**
-
-Study materials, practice quizzes, mock exams, progress tracking, accounts, moderation, and an optional local-AI tutor.
-
-**Engineering focus:** end-to-end product architecture, health checks, and [automated project validation](https://github.com/harshitethic/PsychologyOS/actions/workflows/ci.yml).
-
-[Repository →](https://github.com/harshitethic/PsychologyOS)
-
+<h3><a href="https://github.com/harshitethic/PsychologyOS">PsychologyOS</a></h3>
+<p><strong>Full-stack learning platform · TypeScript · Next.js</strong></p>
+<p>Study materials, practice quizzes, mock exams, progress tracking, accounts, moderation, and an optional local-AI tutor.</p>
+<p><strong>Engineering focus:</strong> end-to-end product architecture, health checks, and <a href="https://github.com/harshitethic/PsychologyOS/actions/workflows/ci.yml">automated project validation</a>.</p>
+<p><a href="https://github.com/harshitethic/PsychologyOS">Repository →</a></p>
 </td>
 <td width="50%" valign="top">
-
-### [RepoPilot](https://github.com/harshitethic/RepoPilot)
-**Local codebase exploration · Python · FastAPI · React · Ollama**
-
-Clones or imports repositories, indexes source, exposes file trees and code search, and supplies relevant context to a local language model for questions about the code.
-
-**Engineering focus:** repository ingestion, search, context retrieval, and [frontend/backend CI](https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml).
-
-[Repository →](https://github.com/harshitethic/RepoPilot)
-
+<h3><a href="https://github.com/harshitethic/RepoPilot">RepoPilot</a></h3>
+<p><strong>Local codebase exploration · Python · FastAPI · React · Ollama</strong></p>
+<p>Clones or imports repositories, indexes source, exposes file trees and code search, and supplies relevant context to a local language model for questions about the code.</p>
+<p><strong>Engineering focus:</strong> safe repository ingestion, search, context retrieval, and <a href="https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml">frontend/backend CI</a>.</p>
+<p><a href="https://github.com/harshitethic/RepoPilot">Repository →</a></p>
 </td>
 </tr>
 </table>
