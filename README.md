@@ -24,12 +24,16 @@ real backend consistency problems: fencing stale workers, recovering crashed
 leases, idempotent producer requests, transactional audit events, bounded retries
 and dead-letter jobs. Four independent processes compete for work in its
 integration tests, and a killed worker's lease can be reclaimed safely.
-All **32 tests pass** across Python 3.11–3.13 in CI. Version 0.1.2
-adds seeded fault-injection tests and fixes a verified queue-starvation bug
+All **34 tests pass** across Python 3.11–3.13 in CI. A
+[one-command offline demo](https://github.com/harshitethic/LeaseLedger/blob/main/docs/reproducible-demo.md)
+also proves stale-ACK rejection and backup recovery using a real SQLite database.
+Version 0.1.2 adds seeded fault-injection tests and fixes a verified queue-starvation bug
 where 100+ exhausted leases concealed runnable jobs. Version 0.1.1
 introduced online WAL-safe backups and integrity verification.
 
-[Read the architecture](https://github.com/harshitethic/LeaseLedger/blob/main/docs/architecture.md)
+[Run the verified offline demo](https://github.com/harshitethic/LeaseLedger/blob/main/docs/reproducible-demo.md)
+· [View its machine-checked JSON output](https://github.com/harshitethic/LeaseLedger/blob/main/docs/recovery-demo-output.json)
+· [Read the architecture](https://github.com/harshitethic/LeaseLedger/blob/main/docs/architecture.md)
 · [Why fencing tokens matter](https://github.com/harshitethic/LeaseLedger/blob/main/docs/notes/why-fencing-tokens.md)
 · [See verified CI](https://github.com/harshitethic/LeaseLedger/actions/workflows/ci.yml)
 · [v0.1.2 release](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.2)
