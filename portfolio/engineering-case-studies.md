@@ -115,7 +115,7 @@ production-scale benchmark. Handler code is trusted local Python.
 
 **Repository:** [ClonePeek](https://github.com/harshitethic/clonepeek)
 **Code review:** [Git filesystem-monitor execution hardening](https://github.com/harshitethic/clonepeek/pull/5)
-**Evidence:** [Cross-platform CI](https://github.com/harshitethic/clonepeek/actions/workflows/ci.yml) · [v0.2.1 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.1) · [Reproduction and trust boundaries](https://github.com/harshitethic/clonepeek/blob/main/docs/GIT-CONFIG-ISOLATION.md)
+**Evidence:** [Cross-platform CI](https://github.com/harshitethic/clonepeek/actions/workflows/ci.yml) · [v0.2.2 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.2) · [Git helper execution reproduction](https://github.com/harshitethic/clonepeek/blob/main/docs/GIT-CONFIG-ISOLATION.md) · [Labeled synthetic evaluation](https://github.com/harshitethic/clonepeek/blob/main/docs/EVALUATION.md)
 
 **Problem:** An offline scanner that classifies execution-capable repository
 configuration should not execute repository-defined code itself. In the
@@ -129,12 +129,19 @@ environment overrides, ignores global/system config, explicitly disables
 filesystem monitors, hooks, external diffs and text conversion, and keeps
 strict argument/ref validation.
 
-**Verification:** The 29-test suite includes the adversarial regression.
-All six GitHub Actions combinations passed on Ubuntu, Windows and macOS
-with Python 3.10 and 3.13.
+**Verification:** The 34-test suite includes the Git helper execution
+regression and a Windows PowerShell expression-style fetch-and-execute
+regression that failed before the fix. All 12 PR CI checks passed across
+two runs of six OS/Python combinations (Ubuntu, Windows, macOS; Python
+3.10 and 3.13). A versioned 46-case hand-authored fixture corpus
+records high-risk TP=15, FP=3, FN=2, TN=26 and per-rule surface-detection
+counts, reproducible with no live malicious scripts.
 
-**Limitations:** ClonePeek still invokes an installed Git binary, which is
-not fully sandboxed. Static scan results are not malware verdicts.
+**Limitations:** ClonePeek invokes an installed Git binary, which is not
+fully sandboxed. The corpus is purposely curated around the rules and
+contains misleading benign folder-open alerts and missed indirect scripts.
+The reported scores describe **only these fixtures**; they are not a
+representative real-world malware-detection estimate.
 
 ---
 

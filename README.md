@@ -131,10 +131,13 @@ and [isolated AI-agent test execution](https://github.com/harshitethic/PatchPilo
 offline preflight scanner for execution-capable repository config
 (editor auto-tasks, npm lifecycle scripts, devcontainer commands and MCP
 servers). In [v0.2.1](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.1),
-I reproduced and fixed a real Git filesystem-monitor execution risk in its
-changed-file mode, with [an adversarial regression and analysis](https://github.com/harshitethic/clonepeek/blob/main/docs/GIT-CONFIG-ISOLATION.md).
-Its 29 tests run across Linux, macOS and Windows CI. It is a heuristic
-inventory aid, not a malware verdict or sandbox.
+I reproduced and fixed a Git filesystem-monitor execution risk in passive scans.
+The [v0.2.2 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.2)
+fixes a previously missed Windows PowerShell execution pattern and includes a
+[46-case synthetic evaluation](https://github.com/harshitethic/clonepeek/blob/main/docs/EVALUATION.md)
+with **all 34 tests passing** on Linux, macOS and Windows CI.
+The evaluation deliberately records false positives and false negatives;
+its scores do **not** estimate real-world malware detection.
 
 ## Collaboration
 
