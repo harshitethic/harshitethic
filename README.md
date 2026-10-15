@@ -64,7 +64,7 @@ external effects or a multi-region distributed queue.*
 </tr>
 <tr>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/harshitethic/clonepeek">ClonePeek</a></h3>
+<h3><a href="https://harshitethic.github.io/clonepeek/">ClonePeek — live demo ↗</a></h3>
 <p><strong>Offline repository security review · Python · GitHub Actions</strong></p>
 <p>Inventories known first-run execution hooks in unfamiliar repositories—npm lifecycle scripts, VS Code tasks, devcontainers, Cursor and Claude Code hooks, and local MCP launch commands—without executing repository code.</p>
 <p><strong>Engineering focus:</strong> bounded, passive reads, symlink protections, SARIF reporting, reviewed baselines, 64 automated tests, and an <a href="https://github.com/harshitethic/clonepeek/actions/workflows/composite-action.yml">actual reusable-action CI matrix</a> on Linux, macOS, and Windows.</p>
@@ -135,7 +135,7 @@ and [isolated AI-agent test execution](https://github.com/harshitethic/PatchPilo
 
 ## Security-focused developer tooling
 
-**[ClonePeek](https://github.com/harshitethic/clonepeek)** provides a
+**[ClonePeek](https://harshitethic.github.io/clonepeek/)** provides a
 standard-library-only, offline scanner to inventory execution-capable
 repository configuration and a
 [reusable GitHub Action](https://github.com/harshitethic/clonepeek/blob/main/docs/GITHUB-ACTION.md)
