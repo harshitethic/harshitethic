@@ -82,7 +82,9 @@ external effects or a multi-region distributed queue.*
 
 ## How I work — engineering evidence
 
-Alongside source code, I maintain [engineering case studies](portfolio/engineering-case-studies.md) showing the problems, design decisions, tests and trade-offs behind my work: **lease fencing, agent isolation, ZIP/Git import boundaries, full-stack CI recovery, and native Linux/macOS portability**. Each case links to verifiable PRs and CI results.
+Alongside source code, I maintain [engineering case studies](portfolio/engineering-case-studies.md) showing the problems, design decisions, tests and trade-offs behind my work: **lease fencing, agent isolation, ZIP/Git import boundaries, SQLite data preservation, full-stack CI recovery, and native Linux/macOS portability**. Each case links to verifiable PRs and CI results.
+
+**Recent reliability work:** In [PsychologyOS PR #14](https://github.com/harshitethic/PsychologyOS/pull/14), I reproduced a curriculum reseed erasing student history, preserved legacy resource IDs, and added real SQLite rollback/retry tests. CI now verifies the production build. [PR #13](https://github.com/harshitethic/PsychologyOS/pull/13) also resolved the remaining dependency audit findings with a scoped, regression-tested patch. [Read the design and limitations](https://github.com/harshitethic/PsychologyOS/blob/main/docs/curriculum-seeding.md).
 
 ## Open-source contributions
 
@@ -99,6 +101,8 @@ As of **15 October 2026**, I have **25 merged pull requests across 9 repositorie
 *PR acceptance and code review are more informative than a raw count of opened PRs. Current status and diffs are available via the links above.*
 
 **Recent maintainer review follow-through:** On [ChurchCRM PR #10484](https://github.com/ChurchCRM/CRM/pull/10484), I corrected the translation-extraction configuration in response to maintainer feedback, verified that the requested string appeared in the generated catalog without committing it, and passed lint plus independent security checks. **The PR was merged on 14 October 2026** and is included in the verified merged-contribution count.
+
+**Ongoing review:** [Poetry PR #11135](https://github.com/python-poetry/poetry/pull/11135) now preserves PATH executable aliases when source directories share their names, following a reviewer's reproduction. The follow-up passed 97 local environment tests (four platform skips) and real disposable CLI checks. It remains **open for upstream CI and maintainer review**, and is not counted as accepted work.
 
 **Maintaining community contributions:** [WhatsApp bot PR #40](https://github.com/harshitethic/whatsapp-chatgpt/pull/40) incorporated a correction from [lucaslokchan's earlier PR #19](https://github.com/harshitethic/whatsapp-chatgpt/pull/19), preserved verified co-author credit, and added privacy tests that prevent raw chat messages and provider exceptions from reaching logs. Both Node 20 and Node 22 CI checks passed. Historical unmerged credential-exposing PRs were closed with rotation notices; closing them does not erase the old public diffs.
 

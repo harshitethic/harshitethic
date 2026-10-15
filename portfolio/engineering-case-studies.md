@@ -81,26 +81,20 @@ production-scale benchmark. Handler code is trusted local Python.
 
 **Limitations:** The unauthenticated API is now loopback-only by default, but this is **not authentication**, sandboxing or safe public/multi-user hosting. Same-host reverse proxies and tunnels can bridge remote clients into loopback. Resource quotas, user authorization and independent security review remain necessary before Internet deployment. Repositories can also contain malicious text targeting the AI prompt; indexed text is not trusted instructions.
 
-## 4. PsychologyOS — rescuing a failing full-stack CI pipeline
+## 4. PsychologyOS — preserving learning history through maintenance
 
 **Repository:** [PsychologyOS](https://github.com/harshitethic/PsychologyOS)
-**Change reviews:** [TypeScript/CI repair](https://github.com/harshitethic/PsychologyOS/pull/4) · [Patched PostCSS dependency](https://github.com/harshitethic/PsychologyOS/pull/5) · [Safer admin credential provisioning](https://github.com/harshitethic/PsychologyOS/pull/12)
-**Verification:** [GitHub Actions CI](https://github.com/harshitethic/PsychologyOS/actions/workflows/ci.yml) · [TypeScript CodeQL](https://github.com/harshitethic/PsychologyOS/actions/workflows/codeql.yml)
+**Change reviews:** [Admin credential provisioning](https://github.com/harshitethic/PsychologyOS/pull/12) · [Prisma dependency remediation](https://github.com/harshitethic/PsychologyOS/pull/13) · [Non-destructive curriculum seeding](https://github.com/harshitethic/PsychologyOS/pull/14)
 
-**Problem:** The full-stack education project was failing TypeScript checks in the admin password route, profile year validation and curriculum seed types. The health smoke-test runner also used a module-incompatible top-level await.
+**Problem:** A routine curriculum reseed deleted and recreated questions and flashcards. SQLite foreign-key cascades erased student attempts and flashcard progress. Rebuilt mock-paper membership also changed the meaning of an existing paper. Separately, the Prisma CLI's merge dependency had a recursive-object stack-exhaustion advisory.
 
-**Approach:**
+**Design:** Match existing questions/cards by complete content and preserve their IDs, including legacy random IDs. Changed content creates a new resource so a past answer is not silently reinterpreted. Topic resource additions commit atomically; mock-paper membership is initialized only when empty and thereafter retained. A failed later topic can be retried without undoing already committed topics.
 
-- Repair the admin account lookup to use the configured username instead of a boolean session check.
-- Validate nullable profile year input and make curriculum data structures accurately typed.
-- Remove duplicate curriculum mapping keys.
-- Wrap the health test in a valid asynchronous entry point.
-- Apply compatible lockfile updates and a narrow PostCSS override instead of forcing a framework/database major upgrade.
-- Remove shared admin default passwords and predictable session signing secrets, use private atomic credential-file provisioning, and avoid printing credential material.
+**Verification:** The actual full seed runs three times against disposable SQLite with synthetic student history. Four scenarios verify repeated-seed preservation, changed/omitted/duplicate content, trigger-injected rollback after a card write, and failed mock-paper initialization/retry. SQLite integrity and foreign-key checks pass. CI also runs six admin provisioning tests, three Prisma dependency regressions, the health check, TypeScript checks and the optimized production build. CI and CodeQL passed on both PR #14 and merged main [`fcb324a`](https://github.com/harshitethic/PsychologyOS/commit/fcb324a3e5aacb46855c9196077d6f60ff4ee299).
 
-**Evidence:** GitHub Actions passes TypeScript checks, health tests and admin setup tests; the extra six credential regressions validate hashed storage, permissions and refusal of symlinks. The optimized Next.js production build was verified separately. The first three CodeQL findings from insecure local setup scripts have been resolved on `main`. npm audit advisories dropped from seven to three, remaining in Prisma's dependency chain.
+**Dependency decision:** The three high-severity audit entries were one transitive dependency chain. A scoped override patches its merge library without forcing a Prisma major/database migration. The cyclic-object regression fails on the old version and passes on the patched version; real Prisma config loading is tested. `npm audit` reports **zero vulnerabilities** at verification on 15 October 2026. Findings were not dismissed to achieve that result. See [compatibility evidence and limits](https://github.com/harshitethic/PsychologyOS/blob/main/docs/prisma-dependency-security.md).
 
-**Limitations:** The three remaining security advisories require a Prisma compatibility and deployment test plan. Do not assume a passing TypeScript check proves every production database operation works.
+**Trade-offs:** This is an additive loader, not a full content-versioning system. Old and revised questions can both appear in practice; retirement needs a reviewed migration. Transactions cover one topic or paper, not the complete curriculum, and concurrent seeders are not supported. Previously deleted history requires a backup. Real production HTTP authentication/learning-flow verification and the Prisma major migration remain separate work. See the [reproduction and recovery boundaries](https://github.com/harshitethic/PsychologyOS/blob/main/docs/curriculum-seeding.md).
 
 ## 5. FxSound — diagnosing a platform-specific compilation failure
 
