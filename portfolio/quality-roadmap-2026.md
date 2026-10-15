@@ -30,8 +30,8 @@ that the overall mission or the follower target is 80% complete.
 ## Outstanding (4 / 20)
 
 - [ ] Independently review PatchPilot production/multi-user security despite zero
-      open CodeQL findings after [PR #26](https://github.com/harshitethic/PatchPilot/pull/26), and investigate remaining
-      PsychologyOS dependency advisories without hiding legitimate findings
+      open CodeQL findings after [PR #26](https://github.com/harshitethic/PatchPilot/pull/26).
+      PsychologyOS dependency remediation is complete in [PR #13](https://github.com/harshitethic/PsychologyOS/pull/13); the broader independent review remains open.
 - [ ] Produce a locally verifiable end-to-end screen recording for the
       newly pinned developer tools; avoid polished mock-ups misrepresented as working apps
 - [ ] Add independent multi-user/production threat review and deployment proof
@@ -53,6 +53,18 @@ Useful non-spam activities:
 5. Measure followers, releases and traffic weekly; adjust topic focus from
    genuine engagement instead of mass-follow or artificial stars.
 
+**Achievement check:** The live profile still shows four types. The genuine
+co-author trailer remains in the merged WhatsApp PR #40 commit, but Pair
+Extraordinaire has not appeared. No badge award or processing date is promised.
+Further opportunities require accepted community answers, genuine collaboration,
+or voluntary adoption; sponsorship would require a separately agreed budget.
+
+**Active external follow-through:** [Poetry #11135](https://github.com/python-poetry/poetry/pull/11135)
+received a tested fix for the reviewer's executable-alias/source-directory
+collision. Local environment suites: 97 passed, four platform skips; real CLI
+checks passed for plain/custom aliases. The upstream PR remains open for
+independent CI and maintainer review.
+
 No follower purchasing, fake engagement, bulk unsolicited DMs or vanity PRs.
 
 ## Latest verified engineering milestone — 15 October 2026
@@ -69,8 +81,16 @@ No follower purchasing, fake engagement, bulk unsolicited DMs or vanity PRs.
   worker privilege separation, cloning/aggregate quotas and independent
   multi-user deployment review remain incomplete. Per-call provider limits
   do not establish public hosting safety.
-- [PsychologyOS #10](https://github.com/harshitethic/PsychologyOS/issues/10) still
-  tracks the tested Prisma migration and remaining dependency advisories.
+- [PsychologyOS PR #13](https://github.com/harshitethic/PsychologyOS/pull/13) resolved
+  the remaining audit findings: zero npm audit vulnerabilities at verification.
+  Three regression tests verify cyclic merges and the real Prisma config loader.
+- [PsychologyOS PR #14](https://github.com/harshitethic/PsychologyOS/pull/14) prevents
+  reseeding from erasing student learning history. Four real SQLite scenarios
+  verify identity preservation, changed content, rollback and retry; CI now also
+  runs the production build. CI and CodeQL passed on the PR and merged main.
+- [PsychologyOS #10](https://github.com/harshitethic/PsychologyOS/issues/10) now
+  tracks a separate Prisma major migration and real HTTP authentication/learning
+  verification. The scoped dependency override needs reassessment during that migration.
 - RepoPilot main already includes PRs #22–24 beyond the older #21 handoff;
   review current source before repeating work. LeaseLedger remains at its
   recovery-demo milestone. Neither project was modified in this milestone.
