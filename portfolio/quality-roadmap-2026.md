@@ -1,4 +1,4 @@
-# Engineering portfolio mission — 15 October 2026
+# Engineering portfolio mission — 16 October 2026 (IST)
 
 This is an evidence-linked, **finite portfolio work checklist**, not a hiring
 score or a promise of follower growth. Each item counts only with a public
@@ -41,7 +41,7 @@ that the overall mission or the follower target is 80% complete.
 
 ## Community growth — separate ongoing goal
 
-**Verified baseline:** 150 followers on 15 Oct 2026; 48 public repositories and four visible native achievement types (Pull Shark, Quickdraw, YOLO, Starstruck).
+**Verified baseline:** 150 followers on 16 Oct 2026 (IST); 48 public repositories and four visible native achievement types (Pull Shark, Quickdraw, YOLO, Starstruck).
 **Target:** 500 genuine followers (+350). Growth requires other people to
 choose to follow and is not guaranteed.
 
@@ -67,7 +67,29 @@ maintainer review.
 
 No follower purchasing, fake engagement, bulk unsolicited DMs or vanity PRs.
 
-## Latest verified engineering milestone — 15 October 2026
+## Latest verified engineering milestones — 16 October 2026 (IST)
+
+- [LeaseLedger PR #7](https://github.com/harshitethic/LeaseLedger/pull/7), merged as
+  [`7daed8f`](https://github.com/harshitethic/LeaseLedger/commit/7daed8fa9f56b2c9fb6728d571ccc2b449b934ed),
+  adds repeated workload measurement, operation percentiles, observed handler
+  timing and cleanup regression tests. **54 tests** passed on Kali and macOS,
+  then Python 3.11–3.13, packaging, benchmark smoke, Ruff and CodeQL passed in
+  [independent CI](https://github.com/harshitethic/LeaseLedger/actions/runs/38825093395).
+  [All 60 recorded trials](https://github.com/harshitethic/LeaseLedger/blob/main/docs/workload-benchmarks.md)
+  account for 18,000 completed jobs and 1,800 retries. The methodology preserves
+  tail latency, uneven worker shares and the Mac's observed scheduling delay;
+  it does not claim a production capacity or fair cross-device comparison.
+- [PatchPilot PR #32](https://github.com/harshitethic/PatchPilot/pull/32), merged as
+  [`b0017d9`](https://github.com/harshitethic/PatchPilot/commit/b0017d9fdca71a0b626e903905aa94a490b266a9),
+  fixes old plans, diffs and passing-test labels surviving a new or failed run.
+  Five real Chromium scenarios pass, with actual viewport recordings retained
+  by CI. The existing **112 backend tests**, Docker isolation, browser CI and
+  Python CodeQL passed before merge and on main. The HTTP fixture is controlled
+  test input; this does **not** complete the integrated tool-demo milestone.
+- The live account check remains **150 followers, 48 public repositories and
+  four native achievement types**. No new achievement or follower growth is claimed.
+
+## Previous engineering milestones — 15 October 2026
 
 - [PatchPilot PR #30](https://github.com/harshitethic/PatchPilot/pull/30) merged as
   [`d05bd36`](https://github.com/harshitethic/PatchPilot/commit/d05bd36f7c10c8a5fb5f49caaa17fe6778f99e64).

@@ -24,11 +24,12 @@ real backend consistency problems: fencing stale workers, recovering crashed
 leases, idempotent producer requests, transactional audit events, bounded retries
 and dead-letter jobs. Four independent processes compete for work in its
 integration tests, and a killed worker's lease can be reclaimed safely.
-All **48 tests pass** across Python 3.11–3.13 in CI (40 queue tests and eight release-publication tests). A
+All **54 tests pass** across Python 3.11–3.13 in CI (40 queue, eight publication and six benchmark tests). A
 [one-command offline demo](https://github.com/harshitethic/LeaseLedger/blob/main/docs/reproducible-demo.md)
 also proves stale-ACK rejection and backup recovery using a real SQLite database.
 Version [0.1.3](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.3) was published by a workflow gated on tests, packaging, benchmark smoke, lint and CodeQL.
 The [writer-contention fix](https://github.com/harshitethic/LeaseLedger/pull/5) rejects leases that expire while waiting for SQLite, with six regressions and verified Kali/macOS runs.
+A [60-trial workload study](https://github.com/harshitethic/LeaseLedger/blob/main/docs/workload-benchmarks.md) records 18,000 completed jobs, 1,800 retries, operation p95/p99s, worker contention and actual handler delays across Kali and macOS. It preserves all trials and documents a large scheduling discrepancy instead of claiming production capacity.
 Version 0.1.2 adds seeded fault-injection tests and fixes a verified queue-starvation bug
 where 100+ exhausted leases concealed runnable jobs. Version 0.1.1
 introduced online WAL-safe backups and integrity verification.
@@ -53,7 +54,7 @@ external effects or a multi-region distributed queue.*
 <h3><a href="https://github.com/harshitethic/PatchPilot">PatchPilot</a></h3>
 <p><strong>Local-first AI developer agent · Python · Git</strong></p>
 <p>Takes a repository task through code inspection, change planning, edits in a separate local workspace, test execution, and reviewable Git diffs.</p>
-<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, loopback-only API with optional bearer authentication, protected workspace operations, staged-secret commit refusal, filtered model context, bounded model-provider transfers, 112 passing tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
+<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, loopback-only API with optional bearer authentication, protected workspace operations, staged-secret commit refusal, filtered model context, bounded model-provider transfers, 112 backend tests, five real Chromium scenarios for result/error state, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
 <p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/api-access-control.md">HTTP security model →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/commit-safety.md">Commit safety and limits →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/model-context-privacy.md">AI context privacy →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/model-provider-limits.md">Provider limits and integration tests →</a></p>
 </td>
 <td width="50%" valign="top">
