@@ -41,7 +41,7 @@ that the overall mission or the follower target is 80% complete.
 
 ## Community growth — separate ongoing goal
 
-**Verified baseline:** 150 followers on 15 Oct 2026; 47 public repositories and four visible native achievement types (Pull Shark, Quickdraw, YOLO, Starstruck).
+**Verified baseline:** 150 followers on 15 Oct 2026; 48 public repositories and four visible native achievement types (Pull Shark, Quickdraw, YOLO, Starstruck).
 **Target:** 500 genuine followers (+350). Growth requires other people to
 choose to follow and is not guaranteed.
 
@@ -62,8 +62,8 @@ or voluntary adoption; sponsorship would require a separately agreed budget.
 **Active external follow-through:** [Poetry #11135](https://github.com/python-poetry/poetry/pull/11135)
 received a tested fix for the reviewer's executable-alias/source-directory
 collision. Local environment suites: 97 passed, four platform skips; real CLI
-checks passed for plain/custom aliases. The upstream PR remains open for
-independent CI and maintainer review.
+checks passed for plain/custom aliases. [Upstream CI passed](https://github.com/python-poetry/poetry/actions/runs/38736327430); the PR remains open for
+maintainer review.
 
 No follower purchasing, fake engagement, bulk unsolicited DMs or vanity PRs.
 
@@ -88,12 +88,30 @@ No follower purchasing, fake engagement, bulk unsolicited DMs or vanity PRs.
   reseeding from erasing student learning history. Four real SQLite scenarios
   verify identity preservation, changed content, rollback and retry; CI now also
   runs the production build. CI and CodeQL passed on the PR and merged main.
+- [PsychologyOS PR #15](https://github.com/harshitethic/PsychologyOS/pull/15) fixed
+  malformed admin signatures and session survival after password rotation or
+  account deletion. [PR #16](https://github.com/harshitethic/PsychologyOS/pull/16)
+  makes learning attempts atomic and rejects malformed submissions. Thirteen
+  production-handler HTTP scenarios verify access boundaries, rollback and
+  concurrent XP accounting against disposable SQLite. CI and CodeQL passed on
+  both PR heads and merged main. Initial CI contention was fixed, not suppressed.
 - [PsychologyOS #10](https://github.com/harshitethic/PsychologyOS/issues/10) now
-  tracks a separate Prisma major migration and real HTTP authentication/learning
-  verification. The scoped dependency override needs reassessment during that migration.
+  tracks a separate Prisma major migration. The established HTTP suite must be
+  repeated during that migration; the scoped override also needs reassessment.
+- [PatchPilot PR #31](https://github.com/harshitethic/PatchPilot/pull/31) closes
+  reproduced repair-prompt leaks through raw Git diffs and test output. All
+  **112 backend tests**, Docker isolation and CodeQL passed before merge and
+  on main [`59f3828`](https://github.com/harshitethic/PatchPilot/commit/59f38282dbb1df2278c97645cc11323e8fa36867).
+- [LeaseLedger PR #5](https://github.com/harshitethic/LeaseLedger/pull/5) fixes
+  expired-lease acceptance during SQLite writer contention. Six real-lock
+  regressions fail before the fix and pass after it. **40 tests** and the
+  existing four-process benchmark smoke passed on Kali and macOS. Python
+  3.11–3.13 CI, packaging, lint and CodeQL passed before merge and on main
+  [`f0a6d71`](https://github.com/harshitethic/LeaseLedger/commit/f0a6d713c7143ab3cce1ee58cc573a60d01456da).
+  The source prepares v0.1.3; a GitHub release is not claimed until published.
 - RepoPilot main already includes PRs #22–24 beyond the older #21 handoff;
-  review current source before repeating work. LeaseLedger remains at its
-  recovery-demo milestone. Neither project was modified in this milestone.
+  review current source before repeating work. RepoPilot was not modified in
+  this milestone. LeaseLedger now includes the lock-contention fix above.
 - ClonePeek was excluded from this work. No repository deletion, visibility
   change, production deployment or existing user-data migration was performed.
 

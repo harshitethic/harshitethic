@@ -24,9 +24,10 @@ real backend consistency problems: fencing stale workers, recovering crashed
 leases, idempotent producer requests, transactional audit events, bounded retries
 and dead-letter jobs. Four independent processes compete for work in its
 integration tests, and a killed worker's lease can be reclaimed safely.
-All **34 tests pass** across Python 3.11–3.13 in CI. A
+All **40 tests pass** across Python 3.11–3.13 in CI. A
 [one-command offline demo](https://github.com/harshitethic/LeaseLedger/blob/main/docs/reproducible-demo.md)
 also proves stale-ACK rejection and backup recovery using a real SQLite database.
+The [writer-contention fix](https://github.com/harshitethic/LeaseLedger/pull/5) rejects leases that expire while waiting for SQLite, with six regressions and verified Kali/macOS runs.
 Version 0.1.2 adds seeded fault-injection tests and fixes a verified queue-starvation bug
 where 100+ exhausted leases concealed runnable jobs. Version 0.1.1
 introduced online WAL-safe backups and integrity verification.
@@ -51,7 +52,7 @@ external effects or a multi-region distributed queue.*
 <h3><a href="https://github.com/harshitethic/PatchPilot">PatchPilot</a></h3>
 <p><strong>Local-first AI developer agent · Python · Git</strong></p>
 <p>Takes a repository task through code inspection, change planning, edits in a separate local workspace, test execution, and reviewable Git diffs.</p>
-<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, loopback-only API with optional bearer authentication, protected workspace operations, staged-secret commit refusal, filtered model context, bounded model-provider transfers, 107 passing tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
+<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, loopback-only API with optional bearer authentication, protected workspace operations, staged-secret commit refusal, filtered model context, bounded model-provider transfers, 112 passing tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
 <p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/api-access-control.md">HTTP security model →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/commit-safety.md">Commit safety and limits →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/model-context-privacy.md">AI context privacy →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/model-provider-limits.md">Provider limits and integration tests →</a></p>
 </td>
 <td width="50%" valign="top">
@@ -84,7 +85,7 @@ external effects or a multi-region distributed queue.*
 
 Alongside source code, I maintain [engineering case studies](portfolio/engineering-case-studies.md) showing the problems, design decisions, tests and trade-offs behind my work: **lease fencing, agent isolation, ZIP/Git import boundaries, SQLite data preservation, full-stack CI recovery, and native Linux/macOS portability**. Each case links to verifiable PRs and CI results.
 
-**Recent reliability work:** In [PsychologyOS PR #14](https://github.com/harshitethic/PsychologyOS/pull/14), I reproduced a curriculum reseed erasing student history, preserved legacy resource IDs, and added real SQLite rollback/retry tests. CI now verifies the production build. [PR #13](https://github.com/harshitethic/PsychologyOS/pull/13) also resolved the remaining dependency audit findings with a scoped, regression-tested patch. [Read the design and limitations](https://github.com/harshitethic/PsychologyOS/blob/main/docs/curriculum-seeding.md).
+**Recent reliability work:** [PsychologyOS PR #15](https://github.com/harshitethic/PsychologyOS/pull/15) binds admin cookies to current account credentials and revokes them on password rotation/deletion. [PR #16](https://github.com/harshitethic/PsychologyOS/pull/16) makes quiz/exam writes atomic and verifies rollback plus concurrent XP accounting through 13 real HTTP scenarios. Both passed CI and CodeQL. In [PR #14](https://github.com/harshitethic/PsychologyOS/pull/14), I reproduced a curriculum reseed erasing student history, preserved legacy resource IDs, and added real SQLite rollback/retry tests. CI now verifies the production build. [PR #13](https://github.com/harshitethic/PsychologyOS/pull/13) also resolved the remaining dependency audit findings with a scoped, regression-tested patch. [Read the design and limitations](https://github.com/harshitethic/PsychologyOS/blob/main/docs/curriculum-seeding.md).
 
 ## Open-source contributions
 
@@ -102,7 +103,7 @@ As of **15 October 2026**, I have **25 merged pull requests across 9 repositorie
 
 **Recent maintainer review follow-through:** On [ChurchCRM PR #10484](https://github.com/ChurchCRM/CRM/pull/10484), I corrected the translation-extraction configuration in response to maintainer feedback, verified that the requested string appeared in the generated catalog without committing it, and passed lint plus independent security checks. **The PR was merged on 14 October 2026** and is included in the verified merged-contribution count.
 
-**Ongoing review:** [Poetry PR #11135](https://github.com/python-poetry/poetry/pull/11135) now preserves PATH executable aliases when source directories share their names, following a reviewer's reproduction. The follow-up passed 97 local environment tests (four platform skips) and real disposable CLI checks. It remains **open for upstream CI and maintainer review**, and is not counted as accepted work.
+**Ongoing review:** [Poetry PR #11135](https://github.com/python-poetry/poetry/pull/11135) now preserves PATH executable aliases when source directories share their names, following a reviewer's reproduction. The follow-up passed 97 local environment tests (four platform skips) and real disposable CLI checks. [Upstream CI passed](https://github.com/python-poetry/poetry/actions/runs/38736327430); it remains **open for maintainer review**, and is not counted as accepted work.
 
 **Maintaining community contributions:** [WhatsApp bot PR #40](https://github.com/harshitethic/whatsapp-chatgpt/pull/40) incorporated a correction from [lucaslokchan's earlier PR #19](https://github.com/harshitethic/whatsapp-chatgpt/pull/19), preserved verified co-author credit, and added privacy tests that prevent raw chat messages and provider exceptions from reaching logs. Both Node 20 and Node 22 CI checks passed. Historical unmerged credential-exposing PRs were closed with rotation notices; closing them does not erase the old public diffs.
 
