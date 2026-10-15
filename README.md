@@ -51,8 +51,8 @@ external effects or a multi-region distributed queue.*
 <h3><a href="https://github.com/harshitethic/PatchPilot">PatchPilot</a></h3>
 <p><strong>Local-first AI developer agent · Python · Git</strong></p>
 <p>Takes a repository task through code inspection, change planning, edits in a separate local workspace, test execution, and reviewable Git diffs.</p>
-<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, loopback-only API with optional bearer authentication, protected workspace operations, staged-secret commit refusal, filtered model context, 91 passing tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
-<p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/api-access-control.md">HTTP security model →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/commit-safety.md">Commit safety and limits →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/model-context-privacy.md">AI context privacy →</a></p>
+<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, loopback-only API with optional bearer authentication, protected workspace operations, staged-secret commit refusal, filtered model context, bounded model-provider transfers, 107 passing tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
+<p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/api-access-control.md">HTTP security model →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/commit-safety.md">Commit safety and limits →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/model-context-privacy.md">AI context privacy →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/model-provider-limits.md">Provider limits and integration tests →</a></p>
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/harshitethic/fxsound-linux-macos">FxSound: Linux and macOS</a></h3>
@@ -86,7 +86,7 @@ Alongside source code, I maintain [engineering case studies](portfolio/engineeri
 
 ## Open-source contributions
 
-As of **13 October 2026**, I have **20 merged pull requests across 9 repositories owned by other developers/organizations**. These include bug fixes, tests, developer tooling, and documentation. Browse the [merged PR history](https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Aharshitethic+-user%3Aharshitethic).
+As of **15 October 2026**, I have **25 merged pull requests across 9 repositories owned by other developers/organizations**. These include bug fixes, tests, developer tooling, and documentation. Browse the [merged PR history](https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Aharshitethic+-user%3Aharshitethic).
 
 | Project | Accepted work |
 | --- | --- |
@@ -98,7 +98,7 @@ As of **13 October 2026**, I have **20 merged pull requests across 9 repositorie
 
 *PR acceptance and code review are more informative than a raw count of opened PRs. Current status and diffs are available via the links above.*
 
-**Recent maintainer review follow-through:** On [ChurchCRM PR #10484](https://github.com/ChurchCRM/CRM/pull/10484), I corrected the translation-extraction configuration in response to maintainer feedback, verified that the requested string appeared in the generated catalog without committing it, and passed lint plus independent security checks. **The PR is still open**, so it is not included in the merged-contribution count.
+**Recent maintainer review follow-through:** On [ChurchCRM PR #10484](https://github.com/ChurchCRM/CRM/pull/10484), I corrected the translation-extraction configuration in response to maintainer feedback, verified that the requested string appeared in the generated catalog without committing it, and passed lint plus independent security checks. **The PR was merged on 14 October 2026** and is included in the verified merged-contribution count.
 
 **Maintaining community contributions:** [WhatsApp bot PR #40](https://github.com/harshitethic/whatsapp-chatgpt/pull/40) incorporated a correction from [lucaslokchan's earlier PR #19](https://github.com/harshitethic/whatsapp-chatgpt/pull/19), preserved verified co-author credit, and added privacy tests that prevent raw chat messages and provider exceptions from reaching logs. Both Node 20 and Node 22 CI checks passed. Historical unmerged credential-exposing PRs were closed with rotation notices; closing them does not erase the old public diffs.
 

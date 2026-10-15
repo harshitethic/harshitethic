@@ -1,4 +1,4 @@
-# Engineering portfolio mission — 14 October 2026
+# Engineering portfolio mission — 15 October 2026
 
 This is an evidence-linked, **finite portfolio work checklist**, not a hiring
 score or a promise of follower growth. Each item counts only with a public
@@ -22,10 +22,10 @@ milestones across profile, engineering, community and evaluation.
 - [x] Publish LeaseLedger tests, architecture docs, v0.1.2 fault-injection and queue-progress fix, online recovery improvements and verified release ([CI](https://github.com/harshitethic/LeaseLedger/actions))
 - [x] Link genuine accepted third-party open-source work, rather than opened PR counts
 - [x] Establish a weekly quantitative follower/star progress review against the baseline
-- [x] Respond to a concrete maintainer review on an issue-linked external PR: fixed [ChurchCRM #10484](https://github.com/ChurchCRM/CRM/pull/10484), verified i18next extraction and lint, and passed independent CodeQL/Semgrep checks. Maintainer merge is still pending.
+- [x] Respond to a concrete maintainer review on an issue-linked external PR: fixed [ChurchCRM #10484](https://github.com/ChurchCRM/CRM/pull/10484), verified i18next extraction and lint, and passed independent CodeQL/Semgrep checks. Merged on 14 October 2026 after the requested fixes and verification.
 
 **Finite milestone progress: 80% complete (16/20).** This is not a claim
-that the overall mission or the follower target is 75% complete.
+that the overall mission or the follower target is 80% complete.
 
 ## Outstanding (4 / 20)
 
@@ -41,7 +41,7 @@ that the overall mission or the follower target is 75% complete.
 
 ## Community growth — separate ongoing goal
 
-**Verified baseline:** 150 followers on 14 Oct 2026.
+**Verified baseline:** 150 followers on 15 Oct 2026; 47 public repositories and four visible native achievement types (Pull Shark, Quickdraw, YOLO, Starstruck).
 **Target:** 500 genuine followers (+350). Growth requires other people to
 choose to follow and is not guaranteed.
 
@@ -54,3 +54,29 @@ Useful non-spam activities:
    genuine engagement instead of mass-follow or artificial stars.
 
 No follower purchasing, fake engagement, bulk unsolicited DMs or vanity PRs.
+
+## Latest verified engineering milestone — 15 October 2026
+
+- [PatchPilot PR #30](https://github.com/harshitethic/PatchPilot/pull/30) merged as
+  [`d05bd36`](https://github.com/harshitethic/PatchPilot/commit/d05bd36f7c10c8a5fb5f49caaa17fe6778f99e64).
+  Reproduced provider failures; added bounded transfers, an overall deadline,
+  sanitized errors, cancellation cleanup and real TCP/Git integration tests.
+- **107 backend tests** passed locally and in independent Python 3.11/3.12 CI;
+  Docker isolation and CodeQL also passed on the exact PR head before merge.
+- Live GitHub search reports **25 merged external PRs across 9 repositories**,
+  including the now-merged ChurchCRM translation-extraction contribution.
+- [PatchPilot #23](https://github.com/harshitethic/PatchPilot/issues/23) stays open:
+  worker privilege separation, cloning/aggregate quotas and independent
+  multi-user deployment review remain incomplete. Per-call provider limits
+  do not establish public hosting safety.
+- [PsychologyOS #10](https://github.com/harshitethic/PsychologyOS/issues/10) still
+  tracks the tested Prisma migration and remaining dependency advisories.
+- RepoPilot main already includes PRs #22–24 beyond the older #21 handoff;
+  review current source before repeating work. LeaseLedger remains at its
+  recovery-demo milestone. Neither project was modified in this milestone.
+- ClonePeek was excluded from this work. No repository deletion, visibility
+  change, production deployment or existing user-data migration was performed.
+
+These results strengthen existing milestones; the finite checklist remains
+**16/20**, and neither follower growth nor an independent security review is
+claimed as completed.
