@@ -147,6 +147,8 @@ including actual reusable-action integration tests. Its
 is deliberately labeled as *non-representative*; findings are heuristic
 review prompts, **not malware verdicts or proof of repository safety**.
 
+The [verified separate-repository consumer workflow](https://github.com/harshitethic/RepoPilot/actions/runs/38728091966) also exercised the released GitHub Action against two immutable public config snapshots: seven Cursor hooks and two VS Code folder-open tasks. [See the engineering case study](portfolio/engineering-case-studies.md) and [reproduction details](https://github.com/harshitethic/clonepeek/blob/main/docs/CROSS-REPO-SMOKE.md). This does not imply independent external adoption.
+
 ## Collaboration
 
 I enjoy tackling concrete bugs, building useful developer tools, and working through edge cases with maintainers. For engineering opportunities, architecture discussions, or collaborations:
