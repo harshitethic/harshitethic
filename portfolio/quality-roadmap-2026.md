@@ -108,7 +108,13 @@ No follower purchasing, fake engagement, bulk unsolicited DMs or vanity PRs.
   existing four-process benchmark smoke passed on Kali and macOS. Python
   3.11–3.13 CI, packaging, lint and CodeQL passed before merge and on main
   [`f0a6d71`](https://github.com/harshitethic/LeaseLedger/commit/f0a6d713c7143ab3cce1ee58cc573a60d01456da).
-  The source prepares v0.1.3; a GitHub release is not claimed until published.
+- [LeaseLedger PR #6](https://github.com/harshitethic/LeaseLedger/pull/6) adds
+  immutable publication after the complete CI/CodeQL gate. Eight release tests
+  bring the suite to **48**. The actual main workflow successfully published
+  [v0.1.3](https://github.com/harshitethic/LeaseLedger/releases/tag/v0.1.3), targeting
+  [`783ad67`](https://github.com/harshitethic/LeaseLedger/commit/783ad67c57277c0095316d51dd9063d669b360da).
+  [Run 38745249190](https://github.com/harshitethic/LeaseLedger/actions/runs/38745249190)
+  verifies the publication step after all required jobs succeeded.
 - RepoPilot main already includes PRs #22–24 beyond the older #21 handoff;
   review current source before repeating work. RepoPilot was not modified in
   this milestone. LeaseLedger now includes the lock-contention fix above.
