@@ -51,8 +51,8 @@ external effects or a multi-region distributed queue.*
 <h3><a href="https://github.com/harshitethic/PatchPilot">PatchPilot</a></h3>
 <p><strong>Local-first AI developer agent · Python · Git</strong></p>
 <p>Takes a repository task through code inspection, change planning, edits in a separate local workspace, test execution, and reviewable Git diffs.</p>
-<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, loopback-only API with optional bearer authentication, protected workspace operations, 78 verified tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
-<p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/api-access-control.md">HTTP security model →</a></p>
+<p><strong>Engineering focus:</strong> fail-closed Docker test isolation, loopback-only API with optional bearer authentication, protected workspace operations, staged-secret commit prevention, 85 passing tests, and <a href="https://github.com/harshitethic/PatchPilot/actions/workflows/docker-isolation.yml">live isolation CI</a>.</p>
+<p><a href="https://github.com/harshitethic/PatchPilot#readme">Source and architecture →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/api-access-control.md">HTTP security model →</a> · <a href="https://github.com/harshitethic/PatchPilot/blob/main/docs/commit-safety.md">Commit safety and limits →</a></p>
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/harshitethic/fxsound-linux-macos">FxSound: Linux and macOS</a></h3>
