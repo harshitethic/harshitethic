@@ -74,8 +74,8 @@ external effects or a multi-region distributed queue.*
 <h3><a href="https://github.com/harshitethic/RepoPilot">RepoPilot</a></h3>
 <p><strong>Local codebase exploration · Python · FastAPI · React · Ollama</strong></p>
 <p>Clones or imports repositories, indexes source, exposes file trees and code search, and supplies relevant context to a local language model for questions about the code.</p>
-<p><strong>Engineering focus:</strong> bounded ZIP streaming, collision-safe imports, credential-free HTTPS Git cloning, adversarial tests, and <a href="https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml">frontend/backend CI</a>.</p>
-<p><a href="https://github.com/harshitethic/RepoPilot">Source →</a> · <a href="https://github.com/harshitethic/RepoPilot/blob/main/docs/http-smoke-test.md">Reproducible HTTP walkthrough →</a> · <a href="https://github.com/harshitethic/RepoPilot/blob/main/docs/github-import-security.md">Import security model →</a></p>
+<p><strong>Engineering focus:</strong> validated and bounded ZIP extraction, atomic import reservations, credential-free HTTPS Git cloning, <strong>45 backend tests</strong>, Python 3.11–3.13 and <a href="https://github.com/harshitethic/RepoPilot/actions/workflows/ci.yml">frontend/backend CI</a>.</p>
+<p><a href="https://github.com/harshitethic/RepoPilot">Source →</a> · <a href="https://github.com/harshitethic/RepoPilot/blob/main/docs/http-smoke-test.md">Reproducible HTTP walkthrough →</a> · <a href="https://github.com/harshitethic/RepoPilot/blob/main/docs/github-import-security.md">Import security model →</a> · <a href="https://github.com/harshitethic/RepoPilot/blob/main/docs/zip-ingestion-security.md">ZIP threat model →</a></p>
 </td>
 </tr>
 </table>
