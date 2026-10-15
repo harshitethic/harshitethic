@@ -64,11 +64,11 @@ external effects or a multi-region distributed queue.*
 </tr>
 <tr>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/harshitethic/PsychologyOS">PsychologyOS</a></h3>
-<p><strong>Full-stack learning platform · TypeScript · Next.js</strong></p>
-<p>Study materials, practice quizzes, mock exams, progress tracking, accounts, moderation, and an optional local-AI tutor.</p>
-<p><strong>Engineering focus:</strong> end-to-end product architecture, health checks, and <a href="https://github.com/harshitethic/PsychologyOS/actions/workflows/ci.yml">automated project validation</a>.</p>
-<p><a href="https://psychologyos.space/">Live website →</a> · <a href="https://github.com/harshitethic/PsychologyOS">Source and tests →</a></p>
+<h3><a href="https://github.com/harshitethic/clonepeek">ClonePeek</a></h3>
+<p><strong>Offline repository security review · Python · GitHub Actions</strong></p>
+<p>Inventories known first-run execution hooks in unfamiliar repositories—npm lifecycle scripts, VS Code tasks, devcontainers, Cursor and Claude Code hooks, and local MCP launch commands—without executing repository code.</p>
+<p><strong>Engineering focus:</strong> bounded, passive reads, symlink protections, SARIF reporting, reviewed baselines, 64 automated tests, and an <a href="https://github.com/harshitethic/clonepeek/actions/workflows/composite-action.yml">actual reusable-action CI matrix</a> on Linux, macOS, and Windows.</p>
+<p><a href="https://github.com/harshitethic/clonepeek/releases/tag/v0.5.0">v0.5.0 release →</a> · <a href="https://github.com/harshitethic/clonepeek/blob/main/docs/GITHUB-ACTION.md">GitHub Action quick start →</a> · <a href="https://github.com/harshitethic/clonepeek/blob/main/docs/THREAT_MODEL.md">Threat model →</a></p>
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/harshitethic/RepoPilot">RepoPilot</a></h3>
@@ -131,17 +131,21 @@ and [isolated AI-agent test execution](https://github.com/harshitethic/PatchPilo
 
 ## Security-focused developer tooling
 
-[ClonePeek](https://github.com/harshitethic/clonepeek) is a dependency-free,
-offline preflight scanner for execution-capable repository config
-(editor auto-tasks, npm lifecycle scripts, devcontainer commands and MCP
-servers). In [v0.2.1](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.1),
-I reproduced and fixed a Git filesystem-monitor execution risk in passive scans.
-The [v0.2.2 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.2)
-fixes a previously missed Windows PowerShell execution pattern and includes a
-[46-case synthetic evaluation](https://github.com/harshitethic/clonepeek/blob/main/docs/EVALUATION.md)
-with **all 34 tests passing** on Linux, macOS and Windows CI.
-The evaluation deliberately records false positives and false negatives;
-its scores do **not** estimate real-world malware detection.
+**[ClonePeek](https://github.com/harshitethic/clonepeek)** provides a
+standard-library-only, offline scanner to inventory execution-capable
+repository configuration and a
+[reusable GitHub Action](https://github.com/harshitethic/clonepeek/blob/main/docs/GITHUB-ACTION.md)
+for PR checks. It reports *trigger → command → file/line → review action*
+without running untrusted repository scripts. The scanner also examines
+bounded first-hop local shell-script references and hardened Git diff
+inspection, with explicit gaps for dynamic or transitive execution.
+
+The [v0.5.0 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.5.0)
+has **64 Python tests** and passing CI across Windows, Linux and macOS,
+including actual reusable-action integration tests. Its
+[51-case synthetic evaluation](https://github.com/harshitethic/clonepeek/blob/main/docs/EVALUATION.md)
+is deliberately labeled as *non-representative*; findings are heuristic
+review prompts, **not malware verdicts or proof of repository safety**.
 
 ## Collaboration
 
