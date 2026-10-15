@@ -116,37 +116,21 @@ production-scale benchmark. Handler code is trusted local Python.
 
 ---
 
-## 6. ClonePeek — reproducible passive-scan trust-boundary repair
+## 6. ClonePeek — turning passive-scan isolation into a reusable GitHub Action
 
 **Repository:** [ClonePeek](https://github.com/harshitethic/clonepeek)
-**Code review:** [Git filesystem-monitor execution hardening](https://github.com/harshitethic/clonepeek/pull/5)
-**Evidence:** [Cross-platform CI](https://github.com/harshitethic/clonepeek/actions/workflows/ci.yml) · [v0.2.2 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.2.2) · [Git helper execution reproduction](https://github.com/harshitethic/clonepeek/blob/main/docs/GIT-CONFIG-ISOLATION.md) · [Labeled synthetic evaluation](https://github.com/harshitethic/clonepeek/blob/main/docs/EVALUATION.md)
+**Implementation reviews:** [Git execution isolation #5](https://github.com/harshitethic/clonepeek/pull/5) · [Local shell-reference review #9](https://github.com/harshitethic/clonepeek/pull/9) · [Tracked script-diff correction #10](https://github.com/harshitethic/clonepeek/pull/10) · [Reusable Action #12](https://github.com/harshitethic/clonepeek/pull/12) · [Separate consumer verification #15](https://github.com/harshitethic/clonepeek/pull/15)
+**Evidence:** [v0.5.0 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.5.0) · [Git isolation reproduction](https://github.com/harshitethic/clonepeek/blob/main/docs/GIT-CONFIG-ISOLATION.md) · [Action integration guide](https://github.com/harshitethic/clonepeek/blob/main/docs/GITHUB-ACTION.md) · [Cross-repository smoke proof](https://github.com/harshitethic/clonepeek/blob/main/docs/CROSS-REPO-SMOKE.md)
 
-**Problem:** An offline scanner that classifies execution-capable repository
-configuration should not execute repository-defined code itself. In the
-original changed-file implementation, Git's local core.fsmonitor config
-could dispatch an executable helper during a name-only diff.
+**Problem:** Inspecting an unfamiliar repository for commands that might run during an npm install, VS Code folder-open event, development-container startup or coding-agent lifecycle should not execute the repository's code. The original `--changed-since` scanner could accidentally invoke a repository-defined Git `core.fsmonitor` helper, violating the tool's passive-scan contract. It could also overlook a risky command inside a local script referenced by an unchanged `package.json`.
 
-**Reproduction and mitigation:** A disposable repo configured with an
-executable filesystem monitor produced an unexpected EXECUTED marker on
-two original scanner invocations. The fixed path filters inherited Git
-environment overrides, ignores global/system config, explicitly disables
-filesystem monitors, hooks, external diffs and text conversion, and keeps
-strict argument/ref validation.
+**Design and debugging:** Reproduced the Git helper issue in a disposable repository with a marker file; hardened the inherited Git environment, explicitly disabled filesystem monitors and hook paths, external diff, text conversion and unexpected remote helpers, and restricted ref inputs. Added **one-hop read-only** inspection of literal local `.sh` references, with symlink/path-escape checks, 32-reference budget, 128 KiB read and 2,000-line limits. Fixed changed-file mode to notice tracked referenced scripts even when their parent config is unchanged. The tool does not run package managers, shell scripts or agent hooks.
 
-**Verification:** The 34-test suite includes the Git helper execution
-regression and a Windows PowerShell expression-style fetch-and-execute
-regression that failed before the fix. All 12 PR CI checks passed across
-two runs of six OS/Python combinations (Ubuntu, Windows, macOS; Python
-3.10 and 3.13). A versioned 46-case hand-authored fixture corpus
-records high-risk TP=15, FP=3, FN=2, TN=26 and per-rule surface-detection
-counts, reproducible with no live malicious scripts.
+**Delivering the tool:** Shipped a separate, versioned GitHub composite Action with **report-only defaults**, opt-in severity thresholds, reviewed baselines, SARIF/JSON/text outputs, and count-only job summaries. It imports the scanner from the Action checkout rather than code from the consumer repository, and does not need a runtime Python dependency install from the target.
 
-**Limitations:** ClonePeek invokes an installed Git binary, which is not
-fully sandboxed. The corpus is purposely curated around the rules and
-contains misleading benign folder-open alerts and missed indirect scripts.
-The reported scores describe **only these fixtures**; they are not a
-representative real-world malware-detection estimate.
+**Verification:** **64 tests** pass; the released main branch passed a six-job Python 3.10/3.13 matrix across Windows, macOS and Ubuntu plus a three-job composite-Action integration matrix. A further actual consumer workflow in **[RepoPilot PR #24](https://github.com/harshitethic/RepoPilot/pull/24)** invoked the immutable ClonePeek release from a *different repository*, using sparse checkouts of two **pinned, real public configuration files**. It verified Git blob identities and detected seven medium Cursor command hooks plus two high YappChat folder-open tasks, with source paths and output counts asserted. The consumer PR's backend/frontend CI (4/4) and CodeQL (2/2) also passed. Neither upstream project's code was executed.
+
+**Limitations and external adoption:** These results are **selected, maintainer-run smoke tests**, not validation by an independent outside developer, field detection accuracy, or evidence of user adoption. The [51-case synthetic evaluation](https://github.com/harshitethic/clonepeek/blob/main/docs/EVALUATION.md) deliberately includes false positives and false negatives and must not be interpreted as real-world malware-detection precision or recall. Dynamic/nested shell execution and many other surfaces remain outside scope; Git is hardened but not fully sandboxed. No scan proves that a repository is safe. [External validation issue #14](https://github.com/harshitethic/clonepeek/issues/14) remains open for genuine feedback.
 
 ---
 
