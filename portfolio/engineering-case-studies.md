@@ -128,6 +128,8 @@ production-scale benchmark. Handler code is trusted local Python.
 
 **Repository:** [ClonePeek](https://github.com/harshitethic/clonepeek)
 **Implementation reviews:** [Git execution isolation #5](https://github.com/harshitethic/clonepeek/pull/5) · [Local shell-reference review #9](https://github.com/harshitethic/clonepeek/pull/9) · [Tracked script-diff correction #10](https://github.com/harshitethic/clonepeek/pull/10) · [Reusable Action #12](https://github.com/harshitethic/clonepeek/pull/12) · [Separate consumer verification #15](https://github.com/harshitethic/clonepeek/pull/15)
+**Original engineering write-up:** [The `git diff` that wasn't read-only](https://harshitethic.github.io/clonepeek/articles/git-fsmonitor-passive-scanning.html) — a reproducible account of the subprocess hazard and its security boundaries.
+
 **Evidence:** [v0.5.0 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.5.0) · [Git isolation reproduction](https://github.com/harshitethic/clonepeek/blob/main/docs/GIT-CONFIG-ISOLATION.md) · [Action integration guide](https://github.com/harshitethic/clonepeek/blob/main/docs/GITHUB-ACTION.md) · [Cross-repository smoke proof](https://github.com/harshitethic/clonepeek/blob/main/docs/CROSS-REPO-SMOKE.md)
 
 **Problem:** Inspecting an unfamiliar repository for commands that might run during an npm install, VS Code folder-open event, development-container startup or coding-agent lifecycle should not execute the repository's code. The original `--changed-since` scanner could accidentally invoke a repository-defined Git `core.fsmonitor` helper, violating the tool's passive-scan contract. It could also overlook a risky command inside a local script referenced by an unchanged `package.json`.
