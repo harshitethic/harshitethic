@@ -113,13 +113,15 @@ As of **15 October 2026**, I have **25 merged pull requests across 9 repositorie
 
 ## Earlier projects with community adoption
 
-My earlier Telegram/WhatsApp AI bot repositories have attracted developers and forks. They are **legacy projects built around older APIs**, not examples of my current production architecture.
+My earlier Telegram/WhatsApp bot projects attracted independent stars and forks. The original **Telegram AI Bot** has since been upgraded to the OpenAI Responses API, with tested abuse controls in [v2.1.0](https://github.com/harshitethic/chatgpt-bot-telegram/releases/tag/v2.1.0). The other older examples are **not** evidence of a current production architecture.
 
 | Repository | GitHub stars · forks (13 Oct 2026) |
 | --- | ---: |
-| [chatgpt-bot-telegram](https://github.com/harshitethic/chatgpt-bot-telegram) | 141 · 148 |
+| [chatgpt-bot-telegram](https://github.com/harshitethic/chatgpt-bot-telegram) — [v2.1.0](https://github.com/harshitethic/chatgpt-bot-telegram/releases/tag/v2.1.0) | 141 · 148 |
 | [ChatGPT-Telegram-Bot](https://github.com/harshitethic/ChatGPT-Telegram-Bot) | 72 · 371 |
 | [whatsapp-chatgpt](https://github.com/harshitethic/whatsapp-chatgpt) | 68 · 168 |
+
+**Verified maintenance (17 October 2026):** [PR #13](https://github.com/harshitethic/chatgpt-bot-telegram/pull/13) introduced process-local per-user hourly usage admission, bounded concurrent paid requests and image-output validation. Its **16 regression tests** include real Telegraf command handling with offline provider stubs. [Node.js 20/22 CI](https://github.com/harshitethic/chatgpt-bot-telegram/actions/workflows/ci.yml), the production dependency audit and [JavaScript CodeQL](https://github.com/harshitethic/chatgpt-bot-telegram/actions/workflows/codeql.yml) passed, including the versioned [release PR #14](https://github.com/harshitethic/chatgpt-bot-telegram/pull/14). Limits reset per process and are **not** guaranteed account-wide monetary caps or verified live-bot deployment. [Engineering writeup](portfolio/engineering-case-studies.md#maintained-example-telegram-ai-bot-spend-guardrails).
 
 ## Engineering toolbox
 

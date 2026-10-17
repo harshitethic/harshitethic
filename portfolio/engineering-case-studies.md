@@ -4,6 +4,20 @@ A selection of technical work with **links to source, regression tests and CI**.
 
 Updated: 16 October 2026 (IST).
 
+## Maintained example: Telegram AI bot spend guardrails
+
+**Repository:** [chatgpt-bot-telegram](https://github.com/harshitethic/chatgpt-bot-telegram) · [Release v2.1.0](https://github.com/harshitethic/chatgpt-bot-telegram/releases/tag/v2.1.0) · [Implementation review #13](https://github.com/harshitethic/chatgpt-bot-telegram/pull/13).
+
+**Problem:** This public bot is actually forked by developers (141 stars, 148 forks as of 17 October 2026). It offered unlimited paid OpenAI text and image commands. A single chat participant could trigger overlapping calls and repeated API charges; the project declared ISC licensing in its package metadata but lacked a license file.
+
+**Fix and trade-offs:** A bounded in-memory admission layer now tracks independent rolling-hour text/image request allowances per Telegram user, permits only one active command per user, caps concurrent operations per process and bounds the number of tracked user identities. Over-limit requests are rejected before reaching the OpenAI client; errors release concurrency slots but continue counting toward admitted hourly usage. Image base64 payloads are validated and decoded only below a 10 MiB cap. Startup rejects invalid budgets. Added a real ISC license consistent with prior package metadata.
+
+**Verification:** [PR #13](https://github.com/harshitethic/chatgpt-bot-telegram/pull/13) adds real Telegraf update tests with stubbed API replies and deterministic clocks. The **16-test** suite passes under Node.js 20 and 22; high-severity production dependency audit and JavaScript CodeQL pass on the merged repository and the [v2.1.0 release commit](https://github.com/harshitethic/chatgpt-bot-telegram/commit/b27210fcb120980edd576ca60889a1ee67f2513e). [Release notes](https://github.com/harshitethic/chatgpt-bot-telegram/blob/main/CHANGELOG.md) cover the new default behavior and migration.
+
+**Limits:** All tests are offline and do not verify production Telegram delivery or provider spending. In-memory budgets reset at process restart and do not coordinate across replicas; users can create other Telegram identities, and the SDK may buffer a large image response before validation. This is not a financial quota or audited multi-tenant protection.
+
+---
+
 ## 1. LeaseLedger — explicit correctness contracts for durable work
 
 **Repository:** [LeaseLedger](https://github.com/harshitethic/LeaseLedger)
