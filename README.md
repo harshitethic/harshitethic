@@ -72,8 +72,8 @@ external effects or a multi-region distributed queue.*
 <h3><a href="https://harshitethic.github.io/clonepeek/">ClonePeek — live demo ↗</a></h3>
 <p><strong>Offline repository security review · Python · GitHub Actions</strong></p>
 <p>Inventories known first-run execution hooks in unfamiliar repositories—npm lifecycle scripts, VS Code tasks, devcontainers, Cursor and Claude Code hooks, and local MCP launch commands—without executing repository code.</p>
-<p><strong>Engineering focus:</strong> bounded, passive reads, symlink protections, SARIF reporting, reviewed baselines, 64 automated tests, and an <a href="https://github.com/harshitethic/clonepeek/actions/workflows/composite-action.yml">actual reusable-action CI matrix</a> on Linux, macOS, and Windows.</p>
-<p><a href="https://github.com/harshitethic/clonepeek/releases/tag/v0.5.0">v0.5.0 release →</a> · <a href="https://github.com/harshitethic/clonepeek/blob/main/docs/GITHUB-ACTION.md">GitHub Action quick start →</a> · <a href="https://github.com/harshitethic/clonepeek/blob/main/docs/THREAT_MODEL.md">Threat model →</a></p>
+<p><strong>Engineering focus:</strong> bounded, passive reads, symlink protections, SARIF reporting, reviewed baselines, 81 automated tests, and an <a href="https://github.com/harshitethic/clonepeek/actions/workflows/composite-action.yml">actual reusable-action CI matrix</a> on Linux, macOS, and Windows.</p>
+<p><a href="https://github.com/marketplace/actions/clonepeek-passive-repository-execution-audit">Free GitHub Marketplace Action →</a> · <a href="https://github.com/harshitethic/clonepeek/releases/tag/v0.5.1">v0.5.1 release →</a> · <a href="https://harshitethic.github.io/clonepeek/#video-demo">34-second real CLI replay →</a> · <a href="https://github.com/harshitethic/clonepeek/blob/main/docs/THREAT_MODEL.md">Threat model →</a></p>
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/harshitethic/RepoPilot">RepoPilot</a></h3>
@@ -151,9 +151,13 @@ without running untrusted repository scripts. The scanner also examines
 bounded first-hop local shell-script references and hardened Git diff
 inspection, with explicit gaps for dynamic or transitive execution.
 
-The [v0.5.0 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.5.0)
-has **64 Python tests** and passing CI across Windows, Linux and macOS,
-including actual reusable-action integration tests. Its
+The [v0.5.1 release](https://github.com/harshitethic/clonepeek/releases/tag/v0.5.1)
+is published as a [free GitHub Marketplace Action](https://github.com/marketplace/actions/clonepeek-passive-repository-execution-audit).
+The current main branch has **81 Python tests** and passing CI across
+Windows, Linux and macOS, including reusable-action integration tests.
+Watch a [34-second replay of real CLI output](https://harshitethic.github.io/clonepeek/#video-demo)
+from the versioned synthetic fixture; this isn't a live user scan.
+Its
 [51-case synthetic evaluation](https://github.com/harshitethic/clonepeek/blob/main/docs/EVALUATION.md)
 is deliberately labeled as *non-representative*; findings are heuristic
 review prompts, **not malware verdicts or proof of repository safety**.
