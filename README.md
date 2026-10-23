@@ -8,6 +8,8 @@
 
 I build and maintain practical developer software with reproducible tests, explicit security boundaries and reviewable changes.
 
+[![Portfolio documentation links](https://github.com/harshitethic/harshitethic/actions/workflows/profile-docs.yml/badge.svg)](https://github.com/harshitethic/harshitethic/actions/workflows/profile-docs.yml)
+
 [Website](https://harshitethic.com) · [LinkedIn](https://www.linkedin.com/in/harshitethic/) · [Email](mailto:contact@harshitethic.com) · [Engineering notes](portfolio/engineering-case-studies.md)
 
 </div>
@@ -23,15 +25,18 @@ I build and maintain practical developer software with reproducible tests, expli
 
 **Hands-on evidence:** [Three short engineering case studies](portfolio/field-notes.md) · [Full technical portfolio](portfolio/engineering-case-studies.md) · [Watch/try real demos](portfolio/demo-gallery.md)
 
-## Open-source work beyond my own repositories
+## Accepted contributions to other projects
 
-I contribute issue-linked fixes and tests to other maintainers' codebases. A few **merged upstream** examples:
+My upstream fixes are reviewed and merged by other maintainers. Representative **merged** changes (verified 23 October 2026):
 
-- [useconcord/concord #1144](https://github.com/useconcord/concord/pull/1144) — defer export URL revocation so browser downloads can start.
-- [ChurchCRM/CRM #10814](https://github.com/ChurchCRM/CRM/pull/10814) — show the external-calendar warning immediately after token creation.
-- [ChurchCRM/CRM #10484](https://github.com/ChurchCRM/CRM/pull/10484) — implement maintainer-requested changes and verify translations and linting.
+- **[Concord #1144](https://github.com/useconcord/concord/pull/1144)** — fix download URL lifetime and add regression tests.
+- **[ChurchCRM #10814](https://github.com/ChurchCRM/CRM/pull/10814)** — immediately explain disabled calendar sharing when a token is generated.
+- **[agent-trace #264](https://github.com/Siddhant-K-code/agent-trace/pull/264)** — implement a read-only Codex hook activation preflight.
+- **[ntfy-ios-NextGen #13](https://github.com/new-usemame/ntfy-ios-NextGen/pull/13)** — support copying notification actions on iOS.
+- **[Concord #1142](https://github.com/useconcord/concord/pull/1142)** — preserve integer precision and trailing zeros.
+- **[ChurchCRM #10759](https://github.com/ChurchCRM/CRM/pull/10759)** — fix missing Slim routing in FrankenPHP.
 
-I keep **open/draft PRs distinct from accepted upstream changes**. [All PRs](https://github.com/pulls?q=is%3Apr+author%3Aharshitethic) · [Merged PR search](https://github.com/pulls?q=is%3Apr+author%3Aharshitethic+is%3Amerged)
+[See merged upstream PRs](https://github.com/search?q=author%3Aharshitethic+is%3Apr+is%3Amerged&type=pullrequests) · [See open PRs](https://github.com/search?q=author%3Aharshitethic+is%3Apr+is%3Aopen&type=pullrequests). Open/draft work is not presented as accepted.
 
 ## Community-used projects
 
