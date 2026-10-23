@@ -44,6 +44,8 @@ My upstream fixes are reviewed and merged by other maintainers. Representative *
 - **[ChatGPT-Telegram-Bot](https://github.com/harshitethic/ChatGPT-Telegram-Bot)** and **[whatsapp-chatgpt](https://github.com/harshitethic/whatsapp-chatgpt)** — popular *legacy* examples; the original API integrations are not presented as current production-ready software.
 - **[FxSound Linux/macOS](https://github.com/harshitethic/fxsound-linux-macos)** — experimental native audio port with Linux/macOS build CI. **Alpha**, not a finished replacement.
 
+**Clean checkout evidence:** [54 + 100 + 116 Python tests on Kali, commands and limitations](portfolio/verified-clean-checkouts-2026-10-23.md).
+
 **Independent testers:** [Reproduce the flagship demos and report verified feedback](portfolio/independent-evaluation.md). The review checklist distinguishes real users from automated fixtures and lists security, benchmark and release boundaries.
 
 ## Working principles
