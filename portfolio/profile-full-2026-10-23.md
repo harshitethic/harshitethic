@@ -87,7 +87,7 @@ external effects or a multi-region distributed queue.*
 
 ## How I work — engineering evidence
 
-Alongside source code, I maintain [engineering case studies](portfolio/engineering-case-studies.md) showing the problems, design decisions, tests and trade-offs behind my work: **lease fencing, agent isolation, ZIP/Git import boundaries, SQLite data preservation, full-stack CI recovery, and native Linux/macOS portability**. Each case links to verifiable PRs and CI results.
+Alongside source code, I maintain [engineering case studies](engineering-case-studies.md) showing the problems, design decisions, tests and trade-offs behind my work: **lease fencing, agent isolation, ZIP/Git import boundaries, SQLite data preservation, full-stack CI recovery, and native Linux/macOS portability**. Each case links to verifiable PRs and CI results.
 
 **Recent reliability work:** [PsychologyOS PR #15](https://github.com/harshitethic/PsychologyOS/pull/15) binds admin cookies to current account credentials and revokes them on password rotation/deletion. [PR #16](https://github.com/harshitethic/PsychologyOS/pull/16) makes quiz/exam writes atomic and verifies rollback plus concurrent XP accounting through 13 real HTTP scenarios. Both passed CI and CodeQL. In [PR #14](https://github.com/harshitethic/PsychologyOS/pull/14), I reproduced a curriculum reseed erasing student history, preserved legacy resource IDs, and added real SQLite rollback/retry tests. CI now verifies the production build. [PR #13](https://github.com/harshitethic/PsychologyOS/pull/13) also resolved the remaining dependency audit findings with a scoped, regression-tested patch. [Read the design and limitations](https://github.com/harshitethic/PsychologyOS/blob/main/docs/curriculum-seeding.md).
 
@@ -121,7 +121,7 @@ My earlier Telegram/WhatsApp bot projects attracted independent stars and forks.
 | [ChatGPT-Telegram-Bot](https://github.com/harshitethic/ChatGPT-Telegram-Bot) | 72 · 371 |
 | [whatsapp-chatgpt](https://github.com/harshitethic/whatsapp-chatgpt) | 68 · 168 |
 
-**Verified maintenance (17 October 2026):** [PR #13](https://github.com/harshitethic/chatgpt-bot-telegram/pull/13) introduced process-local per-user hourly usage admission, bounded concurrent paid requests and image-output validation. Its **16 regression tests** include real Telegraf command handling with offline provider stubs. [Node.js 20/22 CI](https://github.com/harshitethic/chatgpt-bot-telegram/actions/workflows/ci.yml), the production dependency audit and [JavaScript CodeQL](https://github.com/harshitethic/chatgpt-bot-telegram/actions/workflows/codeql.yml) passed, including the versioned [release PR #14](https://github.com/harshitethic/chatgpt-bot-telegram/pull/14). Limits reset per process and are **not** guaranteed account-wide monetary caps or verified live-bot deployment. [Engineering writeup](portfolio/engineering-case-studies.md#maintained-example-telegram-ai-bot-spend-guardrails).
+**Verified maintenance (17 October 2026):** [PR #13](https://github.com/harshitethic/chatgpt-bot-telegram/pull/13) introduced process-local per-user hourly usage admission, bounded concurrent paid requests and image-output validation. Its **16 regression tests** include real Telegraf command handling with offline provider stubs. [Node.js 20/22 CI](https://github.com/harshitethic/chatgpt-bot-telegram/actions/workflows/ci.yml), the production dependency audit and [JavaScript CodeQL](https://github.com/harshitethic/chatgpt-bot-telegram/actions/workflows/codeql.yml) passed, including the versioned [release PR #14](https://github.com/harshitethic/chatgpt-bot-telegram/pull/14). Limits reset per process and are **not** guaranteed account-wide monetary caps or verified live-bot deployment. [Engineering writeup](engineering-case-studies.md#maintained-example-telegram-ai-bot-spend-guardrails).
 
 ## Engineering toolbox
 
@@ -136,7 +136,7 @@ My earlier Telegram/WhatsApp bot projects attracted independent stars and forks.
 
 I publish **reproducible engineering work**, clear failure analyses, and
 maintenance-focused open source rather than maximizing commit counts.
-See the [public portfolio quality roadmap](portfolio/quality-roadmap-2026.md)
+See the [public portfolio quality roadmap](quality-roadmap-2026.md)
 and recent work on [fenced leases](https://github.com/harshitethic/LeaseLedger)
 and [isolated AI-agent test execution](https://github.com/harshitethic/PatchPilot/pull/24).
 
@@ -162,7 +162,7 @@ Its
 is deliberately labeled as *non-representative*; findings are heuristic
 review prompts, **not malware verdicts or proof of repository safety**.
 
-The [verified separate-repository consumer workflow](https://github.com/harshitethic/RepoPilot/actions/runs/38728091966) also exercised the released GitHub Action against two immutable public config snapshots: seven Cursor hooks and two VS Code folder-open tasks. [See the engineering case study](portfolio/engineering-case-studies.md) and [reproduction details](https://github.com/harshitethic/clonepeek/blob/main/docs/CROSS-REPO-SMOKE.md). This does not imply independent external adoption.
+The [verified separate-repository consumer workflow](https://github.com/harshitethic/RepoPilot/actions/runs/38728091966) also exercised the released GitHub Action against two immutable public config snapshots: seven Cursor hooks and two VS Code folder-open tasks. [See the engineering case study](engineering-case-studies.md) and [reproduction details](https://github.com/harshitethic/clonepeek/blob/main/docs/CROSS-REPO-SMOKE.md). This does not imply independent external adoption.
 
 ## Collaboration
 
