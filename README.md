@@ -39,6 +39,8 @@ I keep **open/draft PRs distinct from accepted upstream changes**. [All PRs](htt
 - **[ChatGPT-Telegram-Bot](https://github.com/harshitethic/ChatGPT-Telegram-Bot)** and **[whatsapp-chatgpt](https://github.com/harshitethic/whatsapp-chatgpt)** — popular *legacy* examples; the original API integrations are not presented as current production-ready software.
 - **[FxSound Linux/macOS](https://github.com/harshitethic/fxsound-linux-macos)** — experimental native audio port with Linux/macOS build CI. **Alpha**, not a finished replacement.
 
+**Independent testers:** [Reproduce the flagship demos and report verified feedback](portfolio/independent-evaluation.md). The review checklist distinguishes real users from automated fixtures and lists security, benchmark and release boundaries.
+
 ## Working principles
 
 **Reproduce → isolate the cause → write a regression → implement the fix → run CI → document limits → get review.**
