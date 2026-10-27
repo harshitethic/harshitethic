@@ -27,16 +27,16 @@ I build and maintain practical developer software with reproducible tests, expli
 
 ## Accepted contributions to other projects
 
-My upstream fixes are reviewed and merged by other maintainers. Representative **merged** changes (verified 23 October 2026):
+**138 PRs merged into repositories outside this account** as of 28 October 2026 (GitHub search). This is a count of accepted PRs, **not** a claim that every PR received independent human review or has equal technical significance. A few representative merged, traceable changes:
 
-- **[Concord #1144](https://github.com/useconcord/concord/pull/1144)** — fix download URL lifetime and add regression tests.
-- **[ChurchCRM #10814](https://github.com/ChurchCRM/CRM/pull/10814)** — immediately explain disabled calendar sharing when a token is generated.
-- **[agent-trace #264](https://github.com/Siddhant-K-code/agent-trace/pull/264)** — implement a read-only Codex hook activation preflight.
-- **[ntfy-ios-NextGen #13](https://github.com/new-usemame/ntfy-ios-NextGen/pull/13)** — support copying notification actions on iOS.
-- **[Concord #1142](https://github.com/useconcord/concord/pull/1142)** — preserve integer precision and trailing zeros.
-- **[ChurchCRM #10759](https://github.com/ChurchCRM/CRM/pull/10759)** — fix missing Slim routing in FrankenPHP.
+- **[ChurchCRM #10806](https://github.com/ChurchCRM/CRM/pull/10806)** — block unauthenticated browser access to nested dependency metadata across Apache, nginx and Caddy/FrankenPHP, with security regressions.
+- **[Caura #2020](https://github.com/caura-ai/caura/pull/2020)** — add bounded, opt-in API retries while refusing to retry write operations that could duplicate side effects.
+- **[Concord #1215](https://github.com/useconcord/concord/pull/1215)** — fix outgoing transfer-debit accounting and add regression tests.
+- **[PyPA #2145](https://github.com/pypa/packaging.python.org/pull/2145)** — clarify Python C API versus ABI after maintainer-requested revisions and approval.
+- **[ChurchCRM #10759](https://github.com/ChurchCRM/CRM/pull/10759)** — repair Slim application routing in FrankenPHP.
+- **[agent-trace #264](https://github.com/Siddhant-K-code/agent-trace/pull/264)** — add a read-only Codex hook activation preflight.
 
-[See merged upstream PRs](https://github.com/search?q=author%3Aharshitethic+is%3Apr+is%3Amerged&type=pullrequests) · [See open PRs](https://github.com/search?q=author%3Aharshitethic+is%3Apr+is%3Aopen&type=pullrequests). Open/draft work is not presented as accepted.
+[Accepted upstream PRs](https://github.com/search?q=author%3Aharshitethic+type%3Apr+is%3Amerged+-user%3Aharshitethic&type=pullrequests) · [Open upstream PRs](https://github.com/search?q=author%3Aharshitethic+type%3Apr+is%3Aopen+-user%3Aharshitethic&type=pullrequests). Open/draft changes are not described as accepted.
 
 ## Community-used projects
 
